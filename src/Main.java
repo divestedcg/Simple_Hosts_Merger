@@ -56,15 +56,16 @@ public class Main {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
         //Process the blocklists
-        String[] blocklists = args[2].split(":");
+        String[] blocklists = args[2].split(";");
         final Set<String> arrDomains = new HashSet<>();
         for (String list : blocklists) {
+            String url = list.split(",")[0];
             try {
-                System.out.println("Processing " + list);
+                System.out.println("Processing " + url);
                 //Download the file
-                String encodedName = byteArrayToHexString(MessageDigest.getInstance("MD5").digest(list.getBytes("utf-8")));
-                File out = new File(cacheDir, encodedName + identifyFileType(list));
-                downloadFile(list, out.toPath());
+                String encodedName = byteArrayToHexString(MessageDigest.getInstance("MD5").digest(url.getBytes("utf-8")));
+                File out = new File(cacheDir, encodedName + identifyFileType(url));
+                downloadFile(url, out.toPath());
                 //Parse the file
                 arrDomains.addAll(readHostsFileIntoArray(out));
             } catch (Exception e) {
@@ -72,20 +73,25 @@ public class Main {
             }
         }
         System.out.println("Processed " + arrDomains.size() + " domains");
+        ArrayList<String> arrDomainsNew = new ArrayList<>();
+        arrDomainsNew.addAll(arrDomains);
+        Collections.sort(arrDomainsNew);
         //Write the file
         try {
             PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
-            writer.println("#\n#Created using Trammel Lite\n#Distributed by Coverage");
+            writer.println("#\n#Created using Simple Hosts Merger\n#Distributed by Divested Computing, Inc.");
             writer.println("#Last Updated: " + dateFormat.format(Calendar.getInstance().getTime()));
             writer.println("#Number of Entries: " + arrDomains.size());
             writer.println("#\n#Created from the following lists");
+            writer.println("#All attempts have been made to ensure accuracy of the corresponding license files.");
             writer.println("#If you would like your list removed from this list please email us at support@spotco.us");
+            writer.println("#");
             for (String list : blocklists) {
-                writer.println("##" + list);
+                String[] listS = list.split(",");
+                writer.println("##" + listS[1] + " - " + listS[0]);
             }
             writer.println("#\n");
-
-            for (String line : arrDomains) {
+            for (String line : arrDomainsNew) {
                 writer.println(line);
             }
             writer.close();

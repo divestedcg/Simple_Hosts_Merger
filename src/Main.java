@@ -16,6 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -38,27 +39,44 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
         System.out.println("Copyright 2015-2018 Divested Computing, Inc.");
-        System.out.println("License: GPLv3");
-        System.out.println("");
+        System.out.println("License: GPLv3\n");
         if (args.length != 3) {
-            System.out.println("Please supply the following three arguments: cache directory, output file, blocklists");
+            System.out.println("Please supply the following three arguments: blocklists config (format: link,license;\\n), output file, cache dir");
             System.exit(1);
         }
-
-        //Get the cache dir
-        File cacheDir = new File(args[0]);
-        if (!cacheDir.exists()) {
-            cacheDir.mkdirs();
+        //Get the blocklists
+        ArrayList<String> arrBlocklists = new ArrayList<String>();
+        File blocklists = new File(args[0]);
+        if (blocklists.exists()) {
+            try {
+                Scanner scanner = new Scanner(blocklists);
+                while (scanner.hasNext()) {
+                    String line = scanner.nextLine();
+                    if (line.startsWith("http") && line.contains(",") && line.endsWith(";")) {
+                        arrBlocklists.add(line.replaceAll(";", ""));
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Blocklists file doesn't exist!");
+            System.exit(1);
         }
         //Get the output file
         File fileOut = new File(args[1]);
         if (fileOut.exists()) {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
+        //Get the cache dir
+        File cacheDir = new File(args[2]);
+        if (!cacheDir.exists()) {
+            cacheDir.mkdirs();
+        }
+
         //Process the blocklists
-        String[] blocklists = args[2].split(";");
         final Set<String> arrDomains = new HashSet<>();
-        for (String list : blocklists) {
+        for (String list : arrBlocklists) {
             String url = list.split(",")[0];
             try {
                 System.out.println("Processing " + url);
@@ -86,9 +104,9 @@ public class Main {
             writer.println("#All attempts have been made to ensure accuracy of the corresponding license files.");
             writer.println("#If you would like your list removed from this list please email us at support@spotco.us");
             writer.println("#");
-            for (String list : blocklists) {
+            for (String list : arrBlocklists) {
                 String[] listS = list.split(",");
-                writer.println("##" + listS[1] + " - " + listS[0]);
+                writer.println("##" + listS[1] + "\t- " + listS[0]);
             }
             writer.println("#\n");
             for (String line : arrDomainsNew) {
@@ -114,7 +132,7 @@ public class Main {
             int res = connection.getResponseCode();
             if (res != 304 && (res == 200 || res == 301 || res == 302)) {
                 Files.copy(connection.getInputStream(), out, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("Successfully downloaded " + url);
+                System.out.println("\tSuccessfully downloaded " + url);
             }
             connection.disconnect();
         } catch (Exception e) {

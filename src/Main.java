@@ -56,6 +56,7 @@ public class Main {
                         arrBlocklists.add(line.replaceAll(";", ""));
                     }
                 }
+                scanner.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

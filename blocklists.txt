@@ -7,13 +7,14 @@ https://spotco.us/blocklists/Mobile.txt,GPLv3;
 https://spotco.us/blocklists/Mozilla.txt,GPLv3;
 https://spotco.us/blocklists/Scams.txt,GPLv3;
 https://spotco.us/blocklists/Toxic.txt,GPLv3;
-#https://spotco.us/blocklists/Experimental.txt,GPLv3;
-#https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
+https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
 
 https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt,GPLv3;
+https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt,GPLv3;
+https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt,GPLv3;
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,GPLv3;
 
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;

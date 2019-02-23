@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
-        System.out.println("Copyright 2015-2018 Divested Computing, Inc.");
+        System.out.println("Copyright 2015-2019 Divested Computing, Inc.");
         System.out.println("License: GPLv3\n");
         if (args.length != 3) {
             System.out.println("Please supply the following three arguments: blocklists config (format: link,license;\\n), output file, cache dir");
@@ -52,7 +52,7 @@ public class Main {
                 Scanner scanner = new Scanner(blocklists);
                 while (scanner.hasNext()) {
                     String line = scanner.nextLine();
-                    if (line.startsWith("http") && line.contains(",") && line.endsWith(";")) {
+                    if (line.startsWith("http") && line.contains(",") && line.endsWith(";") && !line.startsWith("#")) {
                         arrBlocklists.add(line.replaceAll(";", ""));
                     }
                 }
@@ -175,23 +175,31 @@ public class Main {
             int c = 0;
             while (fileIn.hasNext()) {
                 String line = fileIn.nextLine().toLowerCase();
-                if (!line.startsWith("#") && !line.trim().equals("")) {//Skip if line is a comment or is blank
+                if (!line.startsWith("#") && !line.startsWith(";") && !line.trim().equals("")) {//Skip if line is a comment or is blank
                     Pattern pattern = Pattern.compile(hostnameRegex);//Only look for hostnames in a string
-                    line = line.replaceAll(".*\\://", "").replaceAll("/", "");
-                    String[] spaceSplit = line.replaceAll("\\s", "~").split("~");
+                    //line = line.replaceAll(".*\\://", "").replaceAll("/", "");
+                    String[] spaceSplit = line.replaceAll("\\s", "~").replaceAll(",", "~").split("~");
                     Matcher matcher;
                     for (String aSpaceSplit : spaceSplit) {
-                        matcher = pattern.matcher(aSpaceSplit);//Apply the pattern to the string
-                        if (matcher.find()) {//Check if the string meets our requirements
-                            out.add("0.0.0.0 " + matcher.group());
-                            c++;
-                        } else if (aSpaceSplit.contains("xn--")) {
-                            out.add("0.0.0.0 " + aSpaceSplit);//Sssssh, its okay
-                            c++;
+                        if(!aSpaceSplit.startsWith("#")
+                            && !aSpaceSplit.startsWith(";")
+                            && !aSpaceSplit.startsWith("//")
+                            && !aSpaceSplit.startsWith("http")
+                            && !aSpaceSplit.startsWith("$")
+                            && !aSpaceSplit.startsWith("@")) {
+                            matcher = pattern.matcher(aSpaceSplit);//Apply the pattern to the string
+                            if (matcher.find()) {//Check if the string meets our requirements
+                                out.add("0.0.0.0 " + matcher.group());
+                                c++;
+                            } else if (aSpaceSplit.contains("xn--")) {
+                                out.add("0.0.0.0 " + aSpaceSplit);//Sssssh, its okay
+                                c++;
+                            }
                         }
                     }
                 }
             }
+            System.out.println("\tAdded " + c + " entries");
         } catch (Exception e) {
             e.printStackTrace();
         }

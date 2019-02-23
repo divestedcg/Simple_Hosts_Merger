@@ -33,15 +33,22 @@ https://raw.githubusercontent.com/yous/YousList/master/hosts.txt,CC BY 4.0;
 https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt,CC BY-SA 4.0;
 https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt,CC BY-SA 4.0;
 
+#https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
+https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,CC0;
+#https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
+https://urlhaus.abuse.ch/downloads/rpz/,CC0;
+https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;
+https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
+
+https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPL;
+
 https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
 https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
-https://feodotracker.abuse.ch/blocklist/?download=domainblocklist,AS-IS;
-https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,AS-IS;
-https://zeustracker.abuse.ch/blocklist.php?download=baddomains,AS-IS;
-https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,AS-IS;
 
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
 http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
+
+#https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Ads-tracker.txt,ISC NC;
 
 https://hosts-file.net/ad_servers.txt,hpHosts;
 https://hosts-file.net/emd.txt,hpHosts;

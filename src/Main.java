@@ -98,12 +98,14 @@ public class Main {
         //Write the file
         try {
             PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
-            writer.println("#\n#Created using Simple Hosts Merger\n#Distributed by Divested Computing, Inc.");
+            writer.println("#");
+            writer.println("#Created using Simple Hosts Merger");
             writer.println("#Last Updated: " + dateFormat.format(Calendar.getInstance().getTime()));
             writer.println("#Number of Entries: " + arrDomains.size());
-            writer.println("#\n#Created from the following lists");
+            writer.println("#");
+            writer.println("#Created from the following lists");
             writer.println("#All attempts have been made to ensure accuracy of the corresponding license files.");
-            writer.println("#If you would like your list removed from this list please email us at support@spotco.us");
+            writer.println("#If you would like your list removed from this list please email us at webmaster@[THIS DOMAIN]");
             writer.println("#");
             for (String list : arrBlocklists) {
                 String[] listS = list.split(",");

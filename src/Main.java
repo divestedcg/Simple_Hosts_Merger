@@ -125,7 +125,7 @@ public class Main {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setConnectTimeout(45000);
             connection.setReadTimeout(45000);
-            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0 ");
+            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0");
             if (out.toFile().exists()) {
                 connection.setIfModifiedSince(out.toFile().lastModified());
             }

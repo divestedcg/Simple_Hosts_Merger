@@ -1,4 +1,3 @@
-run.sh
+run*.sh
 cache
-output.txt
-output.txt.bak
+merged*.txt*

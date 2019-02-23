@@ -44,3 +44,4 @@ https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPL;
 
 https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
 https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
+#https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;

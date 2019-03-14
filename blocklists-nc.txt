@@ -1,3 +1,7 @@
+#Contains lists with restrictive licenses
+#Should be strictly used for private personal non commercial use only
+#eg. for on a Pi DNS server where merging lists can take a while
+
 https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
 https://spotco.us/blocklists/Cameras.txt,GPLv3;
 https://spotco.us/blocklists/Cyanogen.txt,GPLv3;

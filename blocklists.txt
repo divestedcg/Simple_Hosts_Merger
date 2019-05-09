@@ -44,6 +44,8 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPL;
 
+https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
+
 https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
 https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
 #https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;

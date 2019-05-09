@@ -46,12 +46,16 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPL;
 
+https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
+
 https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
 https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
 #https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;
 
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
 http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
+
+https://v.firebog.net/hosts/static/w3kbl.txt,CC BY-NC 4.0;
 
 #https://dshield.org/feeds/suspiciousdomains_Low.txt,CC BY-NC-SA 2.5;
 #http://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;

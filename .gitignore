@@ -2,3 +2,4 @@ run*.sh
 cache
 merged*.txt*
 host*
+/bin/

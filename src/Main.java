@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-2018 Divested Computing, Inc.
+Copyright (c) 2015-2018 Divested Computing Group
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
-        System.out.println("Copyright 2015-2019 Divested Computing, Inc.");
+        System.out.println("Copyright 2015-2019 Divested Computing Group");
         System.out.println("License: GPLv3\n");
         if (args.length != 3) {
             System.out.println("Please supply the following three arguments: blocklists config (format: link,license;\\n), output file, cache dir");

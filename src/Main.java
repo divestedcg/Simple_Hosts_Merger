@@ -153,13 +153,13 @@ public class Main {
 
     public static String identifyFileType(String url) {
         String extension = ".txt";
-        if (url.contains("zip"))
+        if (url.contains("=zip") || url.endsWith(".zip"))
             extension = ".zip";
-        else if (url.contains("gz"))
+        else if (url.contains("=gz") || url.endsWith(".gz"))
             extension = ".gz";
-        else if (url.contains("7zip"))
+        else if (url.contains("=7zip") || url.endsWith(".7zip"))
             extension = ".7z";
-        else if (url.contains("7z"))
+        else if (url.contains("=7z") || url.endsWith(".7z"))
             extension = ".7z";
         return extension;
     }
@@ -168,10 +168,10 @@ public class Main {
         ArrayList<String> out = new ArrayList<>();
         try {
             Scanner fileIn = null;
-            if (identifyFileType(in.toString()).contains(".txt")) {//Plain text
+            if (identifyFileType(in.toString()).equals(".txt")) {//Plain text
                 fileIn = new Scanner(in);
             }
-            if (identifyFileType(in.toString()).contains(".gz")) {//Decompress GunZip
+            if (identifyFileType(in.toString()).equals(".gz")) {//Decompress GunZip
                 fileIn = new Scanner(new GZIPInputStream(new FileInputStream(in)));
             }
             int c = 0;

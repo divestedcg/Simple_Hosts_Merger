@@ -26,8 +26,18 @@ https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/host
 https://raw.githubusercontent.com/paulgb/BarbBlock/master/blacklists/domain-list.txt,MIT;
 https://raw.githubusercontent.com/CHEF-KOCH/BarbBlock-filter-list/master/OpenWrt.txt,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/StreamingAds/hosts,MIT;
+https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts,MIT;
+https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts,MIT;
+https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts,MIT;
 https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt,MIT;
 https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt,MIT;
+https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts,MIT;
+https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt,MIT;
+https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hacked-domains.list,MIT;
+https://raw.githubusercontent.com/nextdns/cname-cloaking-blocklist/master/domains,MIT;
+https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MIT;
+https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt,MIT;
+https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt,MIT;
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking-extended.txt,Apache-2.0;
@@ -44,7 +54,8 @@ https://urlhaus.abuse.ch/downloads/rpz/,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
 
-https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPL;
+https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;
+https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/steamscamsite.txt,WTFPLv2;
 
 https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
 
@@ -52,13 +63,19 @@ https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
 https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
 #https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;
 
+https://raw.githubusercontent.com/bkrcrc/turk-adlist/master/hosts,CC BY-SA 3.0;
+
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
 http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
 
 https://v.firebog.net/hosts/static/w3kbl.txt,CC BY-NC 4.0;
 
-#https://dshield.org/feeds/suspiciousdomains_Low.txt,CC BY-NC-SA 2.5;
-#http://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;
+https://dshield.org/feeds/suspiciousdomains_Low.txt,CC BY-NC-SA 2.5;
+https://dshield.org/feeds/suspiciousdomains_Medium.txt,CC BY-NC-SA 2.5;
+http://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;
+https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/hostfile.txt,CC BY-NC-SA 4.0;
+
+https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
 
 #https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Ads-tracker.txt,ISC NC;
 #https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Malware.txt,ISC NC;
@@ -81,3 +98,15 @@ httsp://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknow
 http://sysctl.org/cameleon/hosts,Unknown;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts,Unknown;
 #https://raw.githubusercontent.com/chiehmin/MinMinGuard/master/assets/host/output_file,Unknown;
+#https://ssl.bblck.me/blacklists/hosts-file.txt,Unknown;
+#https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/other.txt,Unknown;
+https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/cryptomine.txt,Unknown;
+https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/gamefake.txt,Unknown;
+https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/jbfake.txt,Unknown;
+https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/mobile.txt,Unknown;
+https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/smarttv.txt,Unknown;
+https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts,Unknown;
+https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/tgsoft.txt,Unknown;
+https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/yoroi.txt,Unknown;
+https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/zscaler.txt,Unknown;
+https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/cert-pa.txt,Unknown;

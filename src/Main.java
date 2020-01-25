@@ -160,7 +160,10 @@ public class Main {
             int res = connection.getResponseCode();
             if (res != 304 && (res == 200 || res == 301 || res == 302)) {
                 Files.copy(connection.getInputStream(), out, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("\tSuccessfully downloaded " + url);
+                System.out.println("\tSuccessfully downloaded");
+            }
+            if (res == 304) {
+                System.out.println("\tFile not changed");
             }
             connection.disconnect();
         } catch (Exception e) {

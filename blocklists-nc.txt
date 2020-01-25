@@ -19,6 +19,8 @@ https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt,GPLv3;
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt,GPLv3;
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt,GPLv3;
+https://v.firebog.net/hosts/Easylist.txt,GPLv3;
+https://v.firebog.net/hosts/Easyprivacy.txt,GPLv3;
 https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
 
@@ -53,6 +55,7 @@ https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,CC0;
 https://urlhaus.abuse.ch/downloads/rpz/,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
+https://v.firebog.net/hosts/Cybercrime.txt,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;
 https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/steamscamsite.txt,WTFPLv2;
@@ -110,3 +113,4 @@ https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/tgsoft.tx
 https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/yoroi.txt,Unknown;
 https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/zscaler.txt,Unknown;
 https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/cert-pa.txt,Unknown;
+https://v.firebog.net/hosts/APT1Rep.txt,Unknown;

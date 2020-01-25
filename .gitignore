@@ -3,3 +3,4 @@ cache
 merged*.txt*
 host*
 /bin/
+whitelist.txt

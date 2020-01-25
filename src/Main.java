@@ -40,13 +40,34 @@ public class Main {
         System.out.println("Simple Hosts Merger");
         System.out.println("Copyright 2015-2019 Divested Computing Group");
         System.out.println("License: GPLv3\n");
-        if (args.length != 3) {
-            System.out.println("Please supply the following three arguments: blocklists config (format: link,license;\\n), output file, cache dir");
+        if (args.length != 4) {
+            System.out.println("Four arguments required: whitelist file, blocklists config (format: link,license;\\n), output file, cache dir");
+            System.exit(1);
+        }
+        //Get the whitelists
+        final Set<String> arrWhitelist = new HashSet<>();
+        File whitelist = new File(args[0]);
+        if (whitelist.exists()) {
+            try {
+                Scanner scanner = new Scanner(whitelist);
+                while (scanner.hasNext()) {
+                    String line = scanner.nextLine();
+                    if (!line.startsWith("#")) {
+                        arrWhitelist.add(line);
+                    }
+                }
+                scanner.close();
+                System.out.println("Loaded " + arrWhitelist.size() + " whitelisted domains");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Whitelist file doesn't exist!");
             System.exit(1);
         }
         //Get the blocklists
         ArrayList<String> arrBlocklists = new ArrayList<String>();
-        File blocklists = new File(args[0]);
+        File blocklists = new File(args[1]);
         if (blocklists.exists()) {
             try {
                 Scanner scanner = new Scanner(blocklists);
@@ -57,6 +78,7 @@ public class Main {
                     }
                 }
                 scanner.close();
+                System.out.println("Loaded " + arrBlocklists.size() + " blocklist sources");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -65,12 +87,12 @@ public class Main {
             System.exit(1);
         }
         //Get the output file
-        File fileOut = new File(args[1]);
+        File fileOut = new File(args[2]);
         if (fileOut.exists()) {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
         //Get the cache dir
-        File cacheDir = new File(args[2]);
+        File cacheDir = new File(args[3]);
         if (!cacheDir.exists()) {
             cacheDir.mkdirs();
         }
@@ -91,10 +113,13 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        System.out.println("Processed " + arrDomains.size() + " domains");
         ArrayList<String> arrDomainsNew = new ArrayList<>();
         arrDomainsNew.addAll(arrDomains);
+        int preSize = arrDomainsNew.size();
+        arrDomainsNew.removeAll(arrWhitelist);
         Collections.sort(arrDomainsNew);
+        System.out.println("Removed " + (preSize-arrDomainsNew.size()) + " whitelisted entries");
+        System.out.println("Processed " + arrDomains.size() + " domains");
         //Write the file
         try {
             PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
@@ -113,7 +138,7 @@ public class Main {
             }
             writer.println("#\n");
             for (String line : arrDomainsNew) {
-                writer.println(line);
+                writer.println("0.0.0.0 " + line);
             }
             writer.close();
             System.out.println("Wrote out to " + fileOut);
@@ -191,10 +216,10 @@ public class Main {
                             && !aSpaceSplit.startsWith("@")) {
                             matcher = pattern.matcher(aSpaceSplit);//Apply the pattern to the string
                             if (matcher.find()) {//Check if the string meets our requirements
-                                out.add("0.0.0.0 " + matcher.group());
+                                out.add(matcher.group());
                                 c++;
                             } else if (aSpaceSplit.contains("xn--")) {
-                                out.add("0.0.0.0 " + aSpaceSplit);//Sssssh, its okay
+                                out.add(aSpaceSplit);//Sssssh, its okay
                                 c++;
                             }
                         }

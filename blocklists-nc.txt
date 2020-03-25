@@ -3,6 +3,7 @@
 #eg. for on a Pi DNS server where merging lists can take a while
 
 https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
+https://spotco.us/blocklists/ExperimentalV3.txt,GPLv3;
 https://spotco.us/blocklists/Cameras.txt,GPLv3;
 https://spotco.us/blocklists/Cyanogen.txt,GPLv3;
 https://spotco.us/blocklists/Genealogy.txt,GPLv3;
@@ -34,7 +35,7 @@ https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts,MI
 https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt,MIT;
 https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt,MIT;
 https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts,MIT;
-https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt,MIT;
+#https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt,MIT;
 https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hacked-domains.list,MIT;
 https://raw.githubusercontent.com/nextdns/cname-cloaking-blocklist/master/domains,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MIT;
@@ -48,6 +49,7 @@ https://adaway.org/hosts.txt,CC BY 3.0;
 https://raw.githubusercontent.com/yous/YousList/master/hosts.txt,CC BY 4.0;
 https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt,CC BY-SA 4.0;
 https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt,CC BY-SA 4.0;
+https://raw.githubusercontent.com/omicron-b/custom-filters/master/pihole.txt,CC BY-SA 4.0;
 
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
 https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,CC0;

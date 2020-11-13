@@ -2,7 +2,7 @@
 #Should be strictly used for private personal non commercial use only
 #eg. for on a Pi DNS server where merging lists can take a while
 
-https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
+#https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
 https://spotco.us/blocklists/ExperimentalV3.txt,GPLv3;
 https://spotco.us/blocklists/Cameras.txt,GPLv3;
 https://spotco.us/blocklists/Cyanogen.txt,GPLv3;
@@ -44,6 +44,8 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.t
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking-extended.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive-extended.txt,Apache-2.0;
 
 https://adaway.org/hosts.txt,CC BY 3.0;
 https://raw.githubusercontent.com/yous/YousList/master/hosts.txt,CC BY 4.0;
@@ -64,10 +66,6 @@ https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/ste
 
 https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
 
-https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
-https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
-#https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;
-
 https://raw.githubusercontent.com/bkrcrc/turk-adlist/master/hosts,CC BY-SA 3.0;
 
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
@@ -85,18 +83,6 @@ https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0
 #https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Ads-tracker.txt,ISC NC;
 #https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Malware.txt,ISC NC;
 #https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Popads.txt,ISC NC;
-
-https://hosts-file.net/ad_servers.txt,hpHosts;
-https://hosts-file.net/emd.txt,hpHosts;
-https://hosts-file.net/exp.txt,hpHosts;
-https://hosts-file.net/fsa.txt,hpHosts;
-https://hosts-file.net/grm.txt,hpHosts;
-https://hosts-file.net/hfs.txt,hpHosts;
-https://hosts-file.net/hjk.txt,hpHosts;
-https://hosts-file.net/mmt.txt,hpHosts;
-https://hosts-file.net/pha.txt,hpHosts;
-https://hosts-file.net/psh.txt,hpHosts;
-https://hosts-file.net/wrz.txt,hpHosts;
 
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 httsp://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;

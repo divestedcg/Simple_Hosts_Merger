@@ -1,6 +1,6 @@
 #Contains permissively licensed lists
 
-https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
+#https://spotco.us/blocklists/ExperimentalV2.txt,GPLv3;
 https://spotco.us/blocklists/ExperimentalV3.txt,GPLv3;
 https://spotco.us/blocklists/Cameras.txt,GPLv3;
 https://spotco.us/blocklists/Cyanogen.txt,GPLv3;
@@ -42,6 +42,8 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.t
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking-extended.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive-extended.txt,Apache-2.0;
 
 https://adaway.org/hosts.txt,CC BY 3.0;
 https://raw.githubusercontent.com/yous/YousList/master/hosts.txt,CC BY 4.0;
@@ -61,7 +63,3 @@ https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;
 https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/steamscamsite.txt,WTFPLv2;
 
 https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
-
-https://www.malwaredomainlist.com/hostslist/hosts.txt,AS-IS;
-https://osint.bambenekconsulting.com/feeds/c2-dommasterlist.txt,AS-IS;
-#https://osint.bambenekconsulting.com/feeds/dga-feed.txt,AS-IS;

@@ -25,7 +25,6 @@ https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
 
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
 https://raw.githubusercontent.com/paulgb/BarbBlock/master/blacklists/domain-list.txt,MIT;
-https://raw.githubusercontent.com/CHEF-KOCH/BarbBlock-filter-list/master/OpenWrt.txt,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/StreamingAds/hosts,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts,MIT;
@@ -52,7 +51,6 @@ https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
 https://raw.githubusercontent.com/omicron-b/custom-filters/master/pihole.txt,CC BY-SA 4.0;
 
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
-https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,CC0;
 #https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
 https://urlhaus.abuse.ch/downloads/rpz/,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;

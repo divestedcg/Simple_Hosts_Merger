@@ -27,7 +27,6 @@ https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
 
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
 https://raw.githubusercontent.com/paulgb/BarbBlock/master/blacklists/domain-list.txt,MIT;
-https://raw.githubusercontent.com/CHEF-KOCH/BarbBlock-filter-list/master/OpenWrt.txt,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/StreamingAds/hosts,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts,MIT;
@@ -54,7 +53,6 @@ https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
 https://raw.githubusercontent.com/omicron-b/custom-filters/master/pihole.txt,CC BY-SA 4.0;
 
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
-https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt,CC0;
 #https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
 https://urlhaus.abuse.ch/downloads/rpz/,CC0;
 #https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;
@@ -73,16 +71,10 @@ http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
 
 https://v.firebog.net/hosts/static/w3kbl.txt,CC BY-NC 4.0;
 
-https://dshield.org/feeds/suspiciousdomains_Low.txt,CC BY-NC-SA 2.5;
-https://dshield.org/feeds/suspiciousdomains_Medium.txt,CC BY-NC-SA 2.5;
 http://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;
 https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/hostfile.txt,CC BY-NC-SA 4.0;
 
 https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
-
-#https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Ads-tracker.txt,ISC NC;
-#https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Malware.txt,ISC NC;
-#https://raw.githubusercontent.com/CHEF-KOCH/CKs-FilterList/master/HOSTS/Popads.txt,ISC NC;
 
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 httsp://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;

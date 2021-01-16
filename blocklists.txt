@@ -53,8 +53,6 @@ https://raw.githubusercontent.com/omicron-b/custom-filters/master/pihole.txt,CC 
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
 #https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
 https://urlhaus.abuse.ch/downloads/rpz/,CC0;
-#https://zeustracker.abuse.ch/blocklist.php?download=baddomains,CC0;
-#https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist,CC0;
 https://v.firebog.net/hosts/Cybercrime.txt,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;

@@ -171,7 +171,7 @@ public class Main {
         }
     }
 
-    //Credit: http://stackoverflow.com/a/4895572
+    //Credit (CC BY-SA 2.5): https://stackoverflow.com/a/4895572
     public static String byteArrayToHexString(byte[] b) {
         StringBuilder result = new StringBuilder();
         for (byte aB : b)

@@ -74,6 +74,18 @@ https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole
 
 https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
 
+https://hosts-file.net/ad_servers.txt,hpHosts;
+https://hosts-file.net/emd.txt,hpHosts;
+https://hosts-file.net/exp.txt,hpHosts;
+https://hosts-file.net/fsa.txt,hpHosts;
+https://hosts-file.net/grm.txt,hpHosts;
+https://hosts-file.net/hfs.txt,hpHosts;
+https://hosts-file.net/hjk.txt,hpHosts;
+https://hosts-file.net/mmt.txt,hpHosts;
+https://hosts-file.net/pha.txt,hpHosts;
+https://hosts-file.net/psh.txt,hpHosts;
+https://hosts-file.net/wrz.txt,hpHosts;
+
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 httsp://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;
 http://sysctl.org/cameleon/hosts,Unknown;

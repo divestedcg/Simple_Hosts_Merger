@@ -41,28 +41,28 @@ public class Main {
         System.out.println("Copyright 2015-2019 Divested Computing Group");
         System.out.println("License: GPLv3\n");
         if (args.length != 4) {
-            System.out.println("Four arguments required: whitelist file, blocklists config (format: link,license;\\n), output file, cache dir");
+            System.out.println("Four arguments required: exclusion file, blocklists config (format: link,license;\\n), output file, cache dir");
             System.exit(1);
         }
-        //Get the whitelists
-        final Set<String> arrWhitelist = new HashSet<>();
-        File whitelist = new File(args[0]);
-        if (whitelist.exists()) {
+        //Get the allowlists
+        final Set<String> arrAllowlist = new HashSet<>();
+        File allowlist = new File(args[0]);
+        if (allowlist.exists()) {
             try {
-                Scanner scanner = new Scanner(whitelist);
+                Scanner scanner = new Scanner(allowlist);
                 while (scanner.hasNext()) {
                     String line = scanner.nextLine();
                     if (!line.startsWith("#")) {
-                        arrWhitelist.add(line);
+                        arrAllowlist.add(line);
                     }
                 }
                 scanner.close();
-                System.out.println("Loaded " + arrWhitelist.size() + " whitelisted domains");
+                System.out.println("Loaded " + arrAllowlist.size() + " excluded domains");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("Whitelist file doesn't exist!");
+            System.out.println("Allowlist file doesn't exist!");
             System.exit(1);
         }
         //Get the blocklists
@@ -116,9 +116,9 @@ public class Main {
         ArrayList<String> arrDomainsNew = new ArrayList<>();
         arrDomainsNew.addAll(arrDomains);
         int preSize = arrDomainsNew.size();
-        arrDomainsNew.removeAll(arrWhitelist);
+        arrDomainsNew.removeAll(arrAllowlist);
         Collections.sort(arrDomainsNew);
-        System.out.println("Removed " + (preSize-arrDomainsNew.size()) + " whitelisted entries");
+        System.out.println("Removed " + (preSize-arrDomainsNew.size()) + " excluded entries");
         System.out.println("Processed " + arrDomains.size() + " domains");
         //Write the file
         try {

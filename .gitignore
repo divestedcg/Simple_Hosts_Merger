@@ -4,5 +4,6 @@ merged*.txt*
 host*
 /bin/
 whitelist.txt
+allowlist.txt
 .gradle
 build

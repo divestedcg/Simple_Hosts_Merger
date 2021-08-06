@@ -39,16 +39,14 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MI
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt,MIT;
 
-https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking.txt,Apache-2.0;
-https://raw.githubusercontent.com/lightswitch05/hosts/master/ads-and-tracking-extended.txt,Apache-2.0;
-https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive.txt,Apache-2.0;
-https://raw.githubusercontent.com/lightswitch05/hosts/master/tracking-aggressive-extended.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/ads-and-tracking-extended.txt,Apache-2.0;
+https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/tracking-aggressive-extended.txt,Apache-2.0;
 
 https://adaway.org/hosts.txt,CC BY 3.0;
 https://raw.githubusercontent.com/yous/YousList/master/hosts.txt,CC BY 4.0;
 https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt,CC BY-SA 4.0;
 https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt,CC BY-SA 4.0;
-https://raw.githubusercontent.com/omicron-b/custom-filters/master/pihole.txt,CC BY-SA 4.0;
+https://raw.githubusercontent.com/omicron-b/custom-filters/master/domains_imported.txt,CC BY-SA 4.0;
 
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
 #https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;

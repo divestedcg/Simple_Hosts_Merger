@@ -7,3 +7,4 @@ whitelist.txt
 allowlist.txt
 .gradle
 build
+public_suffix_list.dat

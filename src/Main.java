@@ -37,6 +37,7 @@ public class Main {
 
     private static final String hostnameRegex = "^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$"; //Credit: http://www.mkyong.com/regular-expressions/domain-name-regular-expression-example/
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    public static final Set<String> arrWildcardExceptions = new HashSet<>();
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
@@ -46,27 +47,27 @@ public class Main {
             System.out.println("Four arguments required: exclusion file, blocklists config (format: link,license;\\n), output file, cache dir");
             System.exit(1);
         }
+
         //Get the allowlists
         final Set<String> arrAllowlist = new HashSet<>();
         File allowlist = new File(args[0]);
         if (allowlist.exists()) {
-            try {
-                Scanner scanner = new Scanner(allowlist);
-                while (scanner.hasNext()) {
-                    String line = scanner.nextLine();
-                    if (!line.startsWith("#")) {
-                        arrAllowlist.add(line);
-                    }
-                }
-                scanner.close();
-                System.out.println("Loaded " + arrAllowlist.size() + " excluded domains");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+            arrAllowlist.addAll(readFileIntoArray(allowlist));
+            System.out.println("Loaded " + arrAllowlist.size() + " excluded domains");
         } else {
             System.out.println("Allowlist file doesn't exist!");
             System.exit(1);
         }
+        File allowListWildcards = new File("allowlist-wildcards.txt");
+        if (allowListWildcards.exists()) {
+            arrWildcardExceptions.addAll(readFileIntoArray(allowListWildcards));
+        }
+        File publicSuffixList = new File("public_suffix_list.dat");
+        if (publicSuffixList.exists()) {
+            arrWildcardExceptions.addAll(readFileIntoArray(publicSuffixList));
+        }
+        System.out.println("Loaded " + arrWildcardExceptions.size() + " excluded wildcards");
+
         //Get the blocklists
         ArrayList<String> arrBlocklists = new ArrayList<String>();
         File blocklists = new File(args[1]);
@@ -125,9 +126,9 @@ public class Main {
         System.out.println("Processed " + arrDomains.size() + " domains");
 
         //Get the output file
-        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted,false);
+        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted, false);
         writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true);
-        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted,false);
+        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, false);
         writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true);
 
     }
@@ -172,7 +173,7 @@ public class Main {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setConnectTimeout(45000);
             connection.setReadTimeout(45000);
-            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0");
+            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 ");
             if (out.toFile().exists()) {
                 connection.setIfModifiedSince(out.toFile().lastModified());
             }
@@ -210,6 +211,23 @@ public class Main {
         else if (url.contains("=7z") || url.endsWith(".7z"))
             extension = ".7z";
         return extension;
+    }
+
+    public static ArrayList<String> readFileIntoArray(File in) {
+        ArrayList<String> out = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(in);
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                if (!line.startsWith("#") && !line.startsWith("//")) {
+                    out.add(line);
+                }
+            }
+            scanner.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return out;
     }
 
     public static ArrayList<String> readHostsFileIntoArray(File in) {
@@ -256,17 +274,6 @@ public class Main {
         return out;
     }
 
-    //First-level domains to exlude
-    public static final String[] wildcardExceptions = {"gstatic.com", "gstatic.net", "yahoo.com", "wordpress.com",
-            "scene7.com", "nyu.edu", "microsoft.com", "amazonaws.com", "arizona.edu", "uky.edu", "adobe.com",
-            "azure.com", "akamai.net", "akamaiedge.net", "akadns.net", "bing.com", "blogspot.com", "duckdns.org",
-            "edgekey.net", "elasticbeanstalk.com", "elb.amazonaws.com", "free.fr", "herokuapp.com", "llnw.net",
-            "llnwd.net", "msn.com", "nyud.net", "sendgrid.net", "sourceforge.net", "unity3d.com", "weebly.com",
-            "windows.com", "wixsite.com", "zendesk.com", "yahoo.co.jp", "yahoodns.net", "windows.net", "tumblr.com",
-            "stripcdn.com", "sharepoint.com", "s3.amazonaws.com", "s3-website-us-west-2.amazonaws.com",
-            "core.windows.net", "disqus.com", "com.akadns.net", "com.edgekey.net", "cloudflare.net", "cloudfront.net",
-            "cdn.cloudflare.net", "blogspot.ru", "appspot.com", "wns.windows.com"};
-
     public static Set<String> wildcardOptimizer(Set<String> domains) {
         Set<String> wildcards = new HashSet<>();
         Set<String> domainsNew = new HashSet<>();
@@ -286,13 +293,13 @@ public class Main {
 
         // Mark entries with count past X as a wildcard candidate
         for (Map.Entry<String, Integer> domain : occurrenceMap.entrySet()) {
-            if (domain.getValue() >= 100 && domain.getKey().length() >= 7) {
+            if (domain.getValue() >= 100) {
                 wildcards.add(domain.getKey());
             }
         }
 
         //Exclude removal of certain domains
-        for (String exception : wildcardExceptions) {
+        for (String exception : arrWildcardExceptions) {
             wildcards.remove(exception);
         }
 

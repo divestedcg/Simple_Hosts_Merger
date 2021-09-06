@@ -260,9 +260,12 @@ public class Main {
     public static final String[] wildcardExceptions = {"gstatic.com", "gstatic.net", "yahoo.com", "wordpress.com",
             "scene7.com", "nyu.edu", "microsoft.com", "amazonaws.com", "arizona.edu", "uky.edu", "adobe.com",
             "azure.com", "akamai.net", "akamaiedge.net", "akadns.net", "bing.com", "blogspot.com", "duckdns.org",
-            "edgekey.net", "elasticbeanstalk.com", "elb.amazonaws.com", "free.fr", "herokuapp.com", "llwn.net",
-            "llwnd.net", "msn.com", "nyud.net", "sendgrid.net", "sourceforge.net", "unity3d.com", "weebly.com",
-            "windows.com", "wixsite.com", "zendesk.com"};
+            "edgekey.net", "elasticbeanstalk.com", "elb.amazonaws.com", "free.fr", "herokuapp.com", "llnw.net",
+            "llnwd.net", "msn.com", "nyud.net", "sendgrid.net", "sourceforge.net", "unity3d.com", "weebly.com",
+            "windows.com", "wixsite.com", "zendesk.com", "yahoo.co.jp", "yahoodns.net", "windows.net", "tumblr.com",
+            "stripcdn.com", "sharepoint.com", "s3.amazonaws.com", "s3-website-us-west-2.amazonaws.com",
+            "core.windows.net", "disqus.com", "com.akadns.net", "com.edgekey.net", "cloudflare.net", "cloudfront.net",
+            "cdn.cloudflare.net", "blogspot.ru", "appspot.com", "wns.windows.com"};
 
     public static Set<String> wildcardOptimizer(Set<String> domains) {
         Set<String> wildcards = new HashSet<>();

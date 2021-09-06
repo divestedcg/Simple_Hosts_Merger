@@ -14,12 +14,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -38,7 +40,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
-        System.out.println("Copyright 2015-2019 Divested Computing Group");
+        System.out.println("Copyright 2015-2021 Divested Computing Group");
         System.out.println("License: GPLv3\n");
         if (args.length != 4) {
             System.out.println("Four arguments required: exclusion file, blocklists config (format: link,license;\\n), output file, cache dir");
@@ -86,11 +88,7 @@ public class Main {
             System.out.println("Blocklists file doesn't exist!");
             System.exit(1);
         }
-        //Get the output file
-        File fileOut = new File(args[2]);
-        if (fileOut.exists()) {
-            fileOut.renameTo(new File(fileOut + ".bak"));
-        }
+
         //Get the cache dir
         File cacheDir = new File(args[3]);
         if (!cacheDir.exists()) {
@@ -98,13 +96,13 @@ public class Main {
         }
 
         //Process the blocklists
-        final Set<String> arrDomains = new HashSet<>();
+        Set<String> arrDomains = new HashSet<>();
         for (String list : arrBlocklists) {
             String url = list.split(",")[0];
             try {
                 System.out.println("Processing " + url);
                 //Download the file
-                String encodedName = byteArrayToHexString(MessageDigest.getInstance("MD5").digest(url.getBytes("utf-8")));
+                String encodedName = byteArrayToHexString(MessageDigest.getInstance("MD5").digest(url.getBytes(StandardCharsets.UTF_8)));
                 File out = new File(cacheDir, encodedName + identifyFileType(url));
                 downloadFile(url, out.toPath());
                 //Parse the file
@@ -113,12 +111,28 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        //Get the output file
+        writeOut(new File(args[2]), arrBlocklists, arrAllowlist, arrDomains, false, false);
+        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrAllowlist, arrDomains, false, true);
+        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrAllowlist, arrDomains, true, false);
+        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrAllowlist, arrDomains, true, true);
+
+    }
+
+    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, Set<String> arrAllowlist, Set<String> arrDomains, boolean wildcards, boolean domainsOnly) {
+        if (fileOut.exists()) {
+            fileOut.renameTo(new File(fileOut + ".bak"));
+        }
+        if (wildcards) {
+            arrDomains = wildcardOptimizer(arrDomains);
+        }
         ArrayList<String> arrDomainsNew = new ArrayList<>();
         arrDomainsNew.addAll(arrDomains);
         int preSize = arrDomainsNew.size();
         arrDomainsNew.removeAll(arrAllowlist);
         Collections.sort(arrDomainsNew);
-        System.out.println("Removed " + (preSize-arrDomainsNew.size()) + " excluded entries");
+        System.out.println("Removed " + (preSize - arrDomainsNew.size()) + " excluded entries");
         System.out.println("Processed " + arrDomains.size() + " domains");
         //Write the file
         try {
@@ -138,7 +152,11 @@ public class Main {
             }
             writer.println("#\n");
             for (String line : arrDomainsNew) {
-                writer.println("0.0.0.0 " + line);
+                if (domainsOnly) {
+                    writer.println(line);
+                } else {
+                    writer.println("0.0.0.0 " + line);
+                }
             }
             writer.close();
             System.out.println("Wrote out to " + fileOut);
@@ -211,12 +229,12 @@ public class Main {
                     String[] spaceSplit = line.replaceAll("\\s", "~").replaceAll(",", "~").split("~");
                     Matcher matcher;
                     for (String aSpaceSplit : spaceSplit) {
-                        if(!aSpaceSplit.startsWith("#")
-                            && !aSpaceSplit.startsWith(";")
-                            && !aSpaceSplit.startsWith("//")
-                            && !aSpaceSplit.startsWith("http")
-                            && !aSpaceSplit.startsWith("$")
-                            && !aSpaceSplit.startsWith("@")) {
+                        if (!aSpaceSplit.startsWith("#")
+                                && !aSpaceSplit.startsWith(";")
+                                && !aSpaceSplit.startsWith("//")
+                                && !aSpaceSplit.startsWith("http")
+                                && !aSpaceSplit.startsWith("$")
+                                && !aSpaceSplit.startsWith("@")) {
                             matcher = pattern.matcher(aSpaceSplit);//Apply the pattern to the string
                             if (matcher.find()) {//Check if the string meets our requirements
                                 out.add(matcher.group());
@@ -234,6 +252,77 @@ public class Main {
             e.printStackTrace();
         }
         return out;
+    }
+
+    //First-level domains to exlude
+    public static final String[] wildcardExceptions = {"gstatic.com", "gstatic.net", "yahoo.com", "wordpress.com",
+            "scene7.com", "nyu.edu", "microsoft.com", "amazonaws.com", "arizona.edu", "uky.edu", "adobe.com",
+            "azure.com", "akamai.net", "akamaiedge.net", "akadns.net", "bing.com", "blogspot.com", "duckdns.org",
+            "edgekey.net", "elasticbeanstalk.com", "elb.amazonaws.com", "free.fr", "herokuapp.com", "llwn.net",
+            "llwnd.net", "msn.com", "nyud.net", "sendgrid.net", "sourceforge.net", "unity3d.com", "weebly.com",
+            "windows.com", "wixsite.com", "zendesk.com"};
+
+    public static Set<String> wildcardOptimizer(Set<String> domains) {
+        Set<String> wildcards = new HashSet<>();
+        Set<String> domainsNew = new HashSet<>();
+        Map<String, Integer> occurrenceMap = new HashMap<>();
+
+        // Count the occurrence of each entry with one level removed
+        for (int shift = 1; shift < 20; shift++) {
+            for (String domain : domains) {
+                if (domain.split("\\.").length > shift + 1) {
+                    String shifted = jankSplit(domain, shift);
+                    if (shifted.length() > 0) {
+                        occurrenceMap.merge(shifted, 1, Integer::sum);
+                    }
+                }
+            }
+        }
+
+        // Mark entries with count past X as a wildcard candidate
+        for (Map.Entry<String, Integer> domain : occurrenceMap.entrySet()) {
+            if (domain.getValue() >= 100 && domain.getKey().length() >= 7) {
+                wildcards.add(domain.getKey());
+            }
+        }
+
+        //Exclude removal of certain domains
+        for (String exception : wildcardExceptions) {
+            wildcards.remove(exception);
+        }
+
+        // Exclude all domains that would be matched by the wildcard and include the rest
+        domainsNew.addAll(domains);
+        for (String domain : domains) {
+            for (String wildcard : wildcards) {
+                if (domain.endsWith("." + wildcard)) {
+                    domainsNew.remove(domain);
+                }
+            }
+        }
+
+        //Add the wildcards
+        for (String wildcard : wildcards) {
+            domainsNew.add("*." + wildcard);
+        }
+
+        System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcards.size())) + " with " + wildcards.size() + " wildcards");
+
+        return domainsNew;
+    }
+
+    public static String jankSplit(String input, int afterOccurrence) {
+        StringBuilder result = new StringBuilder();
+        String[] split = input.split("\\.");
+        for (int count = 0; count < split.length; count++) {
+            if (count >= afterOccurrence) {
+                result.append(split[count]);
+                if (count != (split.length - 1)) {
+                    result.append(".");
+                }
+            }
+        }
+        return result.toString();
     }
 
 }

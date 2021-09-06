@@ -30,6 +30,7 @@ microsoft.com
 msn.com
 nyud.net
 nyu.edu
+qq.com
 s3.amazonaws.com
 s3-website-us-west-2.amazonaws.com
 scene7.com

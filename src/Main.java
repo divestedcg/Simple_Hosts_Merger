@@ -173,7 +173,7 @@ public class Main {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setConnectTimeout(45000);
             connection.setReadTimeout(45000);
-            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0 ");
+            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0");
             if (out.toFile().exists()) {
                 connection.setIfModifiedSince(out.toFile().lastModified());
             }
@@ -316,6 +316,7 @@ public class Main {
         //Add the wildcards
         for (String wildcard : wildcards) {
             domainsNew.add("*." + wildcard);
+            domainsNew.add(wildcard);
         }
 
         System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcards.size())) + " domains with " + wildcards.size() + " wildcards");

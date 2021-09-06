@@ -112,28 +112,30 @@ public class Main {
             }
         }
 
+        //Remove excluded entries
+        int preSize = arrDomains.size();
+        arrDomains.removeAll(arrAllowlist);
+        System.out.println("Removed " + (preSize - arrDomains.size()) + " excluded entries");
+
+        //Sorting
+        ArrayList<String> arrDomainsSorted = new ArrayList<>(arrDomains);
+        Collections.sort(arrDomainsSorted);
+        ArrayList<String> arrDomainsWildcardsSorted = new ArrayList<>(wildcardOptimizer(arrDomains));
+        Collections.sort(arrDomainsWildcardsSorted);
+        System.out.println("Processed " + arrDomains.size() + " domains");
+
         //Get the output file
-        writeOut(new File(args[2]), arrBlocklists, arrAllowlist, arrDomains, false, false);
-        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrAllowlist, arrDomains, false, true);
-        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrAllowlist, arrDomains, true, false);
-        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrAllowlist, arrDomains, true, true);
+        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted,false);
+        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true);
+        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted,false);
+        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true);
 
     }
 
-    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, Set<String> arrAllowlist, Set<String> arrDomains, boolean wildcards, boolean domainsOnly) {
+    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, boolean domainsOnly) {
         if (fileOut.exists()) {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
-        if (wildcards) {
-            arrDomains = wildcardOptimizer(arrDomains);
-        }
-        ArrayList<String> arrDomainsNew = new ArrayList<>();
-        arrDomainsNew.addAll(arrDomains);
-        int preSize = arrDomainsNew.size();
-        arrDomainsNew.removeAll(arrAllowlist);
-        Collections.sort(arrDomainsNew);
-        System.out.println("Removed " + (preSize - arrDomainsNew.size()) + " excluded entries");
-        System.out.println("Processed " + arrDomains.size() + " domains");
         //Write the file
         try {
             PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
@@ -151,7 +153,7 @@ public class Main {
                 writer.println("#" + listS[1] + "\t\t- " + listS[0]);
             }
             writer.println("#\n");
-            for (String line : arrDomainsNew) {
+            for (String line : arrDomains) {
                 if (domainsOnly) {
                     writer.println(line);
                 } else {
@@ -306,7 +308,7 @@ public class Main {
             domainsNew.add("*." + wildcard);
         }
 
-        System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcards.size())) + " with " + wildcards.size() + " wildcards");
+        System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcards.size())) + " domains with " + wildcards.size() + " wildcards");
 
         return domainsNew;
     }

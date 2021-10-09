@@ -66,6 +66,7 @@ public class Main {
         if (publicSuffixList.exists()) {
             arrWildcardExceptions.addAll(readFileIntoArray(publicSuffixList));
         }
+        arrWildcardExceptions.addAll(arrAllowlist);
         System.out.println("Loaded " + arrWildcardExceptions.size() + " excluded wildcards");
 
         //Get the blocklists
@@ -302,6 +303,18 @@ public class Main {
         for (String exception : arrWildcardExceptions) {
             wildcards.remove(exception);
         }
+
+        //Remove redundant wildcards
+        Set<String> wildcardsNew = new HashSet<>();
+        wildcardsNew.addAll(wildcards);
+        for (String wildcard : wildcards) {
+            for(String wildcardCheck : wildcards) {
+                if(!wildcard.equals(wildcardCheck) && wildcardCheck.endsWith("." + wildcard)) {
+                    wildcardsNew.remove(wildcardCheck);
+                }
+            }
+        }
+        wildcards = wildcardsNew;
 
         // Exclude all domains that would be matched by the wildcard and include the rest
         domainsNew.addAll(domains);

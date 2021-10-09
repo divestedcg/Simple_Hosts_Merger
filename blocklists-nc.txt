@@ -102,3 +102,4 @@ https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/yoroi.txt
 https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/zscaler.txt,Unknown;
 https://raw.githubusercontent.com/scafroglia93/hosts-blocklists/master/cert-pa.txt,Unknown;
 https://v.firebog.net/hosts/APT1Rep.txt,Unknown;
+https://hosts.oisd.nl,Unknown;

@@ -294,7 +294,7 @@ public class Main {
 
         // Mark entries with count past X as a wildcard candidate
         for (Map.Entry<String, Integer> domain : occurrenceMap.entrySet()) {
-            if (domain.getValue() >= 100) {
+            if (domain.getValue() >= 50) {
                 wildcards.add(domain.getKey());
             }
         }

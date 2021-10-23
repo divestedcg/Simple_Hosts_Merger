@@ -51,6 +51,7 @@ https://raw.githubusercontent.com/omicron-b/custom-filters/master/domains_import
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
 #https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
 https://urlhaus.abuse.ch/downloads/rpz/,CC0;
+https://curben.gitlab.io/malware-filter/urlhaus-filter-hosts.txt,CC0;
 https://v.firebog.net/hosts/Cybercrime.txt,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;

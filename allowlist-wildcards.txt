@@ -1,3 +1,4 @@
+3gppnetwork.org
 a2z.com
 adobe.com
 akadns.net
@@ -75,6 +76,7 @@ net.cdn.cloudflare.net
 net.edgekey.net
 nyud.net
 nyu.edu
+pub.3gppnetwork.org
 qq.com
 s3.amazonaws.com
 s3-ap-northeast-1.amazonaws.com

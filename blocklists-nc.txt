@@ -4,6 +4,7 @@
 
 #https://divested.dev/blocklists/ExperimentalV2.txt,GPLv3;
 https://divested.dev/blocklists/ExperimentalV3.txt,GPLv3;
+https://divested.dev/blocklists/ExperimentalV4.txt,GPLv3;
 https://divested.dev/blocklists/Cameras.txt,GPLv3;
 https://divested.dev/blocklists/Cyanogen.txt,GPLv3;
 https://divested.dev/blocklists/Genealogy.txt,GPLv3;
@@ -106,7 +107,7 @@ https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-yoro
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-zscaler.txt,Unknown;
 https://v.firebog.net/hosts/APT1Rep.txt,Unknown;
 https://www.stopforumspam.com/downloads/toxic_domains_whole.txt,Unknown;
-https://sysctl.org/cameleon/hosts,Unknown;
+http://sysctl.org/cameleon/hosts,Unknown;
 
 #Dead
 https://hosts-file.net/ad_servers.txt,hpHosts;

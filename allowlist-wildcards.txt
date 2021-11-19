@@ -68,6 +68,7 @@ google.com
 gstatic.com
 gstatic.net
 herokuapp.com
+libsyn.com
 llnwd.net
 llnw.net
 microsoft.com

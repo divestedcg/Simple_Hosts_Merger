@@ -36,6 +36,7 @@ import java.util.zip.GZIPInputStream;
 public class Main {
 
     private static final String hostnameRegex = "^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$"; //Credit: http://www.mkyong.com/regular-expressions/domain-name-regular-expression-example/
+    private static final Pattern hostnamePattern = Pattern.compile(hostnameRegex);
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     public static final Set<String> arrWildcardExceptions = new HashSet<>();
 
@@ -241,38 +242,56 @@ public class Main {
             if (identifyFileType(in.toString()).equals(".gz")) {//Decompress GunZip
                 fileIn = new Scanner(new GZIPInputStream(new FileInputStream(in)));
             }
-            int c = 0;
             while (fileIn.hasNext()) {
-                String line = fileIn.nextLine().toLowerCase();
-                if (!line.startsWith("#") && !line.startsWith(";") && !line.trim().equals("")) {//Skip if line is a comment or is blank
-                    Pattern pattern = Pattern.compile(hostnameRegex);//Only look for hostnames in a string
-                    //line = line.replaceAll(".*\\://", "").replaceAll("/", "");
-                    String[] spaceSplit = line.replaceAll("\\s", "~").replaceAll(",", "~").split("~");
-                    Matcher matcher;
-                    for (String aSpaceSplit : spaceSplit) {
-                        if (!aSpaceSplit.startsWith("#")
-                                && !aSpaceSplit.startsWith(";")
-                                && !aSpaceSplit.startsWith("//")
-                                && !aSpaceSplit.startsWith("http")
-                                && !aSpaceSplit.startsWith("$")
-                                && !aSpaceSplit.startsWith("@")) {
-                            matcher = pattern.matcher(aSpaceSplit);//Apply the pattern to the string
-                            if (matcher.find()) {//Check if the string meets our requirements
-                                out.add(matcher.group());
-                                c++;
-                            } else if (aSpaceSplit.contains("xn--")) {
-                                out.add(aSpaceSplit);//Sssssh, its okay
-                                c++;
-                            }
-                        }
-                    }
-                }
+                out.addAll(getDomainsFromString(fileIn.nextLine()));
             }
-            System.out.println("\tAdded " + c + " entries");
+            System.out.println("\tAdded " + out.size() + " entries");
         } catch (Exception e) {
             e.printStackTrace();
         }
         return out;
+    }
+
+    public static Set<String> getDomainsFromString(String input) {
+        Set<String> domains = new HashSet<>();
+
+        String line = input.toLowerCase();
+        if (!shouldConsiderString(line)) {
+            return domains;
+        }
+
+        String[] blankSplit = line
+                .replaceAll("[\\s,;]", "~")
+                .split("~");
+
+        Matcher matcher;
+        for (String aSpaceSplit : blankSplit) {
+            if (shouldConsiderString(line)) {
+                aSpaceSplit = aSpaceSplit
+                        .replaceAll("https://", "")
+                        .replaceAll("http://", "")
+                        .replaceAll("ftp://", "");
+                //.replaceAll("/.*", "");
+                matcher = hostnamePattern.matcher(aSpaceSplit);//Apply the pattern to the string
+                if (matcher.find()) {//Check if the string meets our requirements
+                    domains.add(matcher.group());
+                } else if (aSpaceSplit.contains("xn--")) {//Ugly
+                    domains.add(aSpaceSplit);
+                }
+            }
+        }
+
+        return domains;
+    }
+
+    public static boolean shouldConsiderString(String line) {
+        return !line.trim().equals("")
+                && !line.startsWith("#")
+                && !line.startsWith(";")
+                && !line.startsWith("!")
+                && !line.startsWith("//")
+                && !line.startsWith("$")
+                && !line.startsWith("@");
     }
 
     public static Set<String> wildcardOptimizer(Set<String> domains) {
@@ -308,8 +327,8 @@ public class Main {
         Set<String> wildcardsNew = new HashSet<>();
         wildcardsNew.addAll(wildcards);
         for (String wildcard : wildcards) {
-            for(String wildcardCheck : wildcards) {
-                if(!wildcard.equals(wildcardCheck) && wildcardCheck.endsWith("." + wildcard)) {
+            for (String wildcardCheck : wildcards) {
+                if (!wildcard.equals(wildcardCheck) && wildcardCheck.endsWith("." + wildcard)) {
                     wildcardsNew.remove(wildcardCheck);
                 }
             }

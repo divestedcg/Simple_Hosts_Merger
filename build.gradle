@@ -4,9 +4,9 @@ plugins {
 
 sourceSets {
     main {
-         java {
+        java {
             srcDirs = ['src']
-         }
+        }
     }
 }
 
@@ -27,7 +27,7 @@ def getVersionGit() {
     try {
         def gitAvailable = "command -v git".execute()
         gitAvailable.waitFor()
-        if(gitAvailable.exitValue() == 0) {
+        if (gitAvailable.exitValue() == 0) {
             def commit = "git rev-parse --short HEAD".execute().text.trim()
             def commitDate = "git show -s --format=%cs ".concat(commit).execute().text.trim()
             versionGit = "_" + commitDate + '_' + commit
@@ -39,4 +39,5 @@ def getVersionGit() {
     }
     return versionGit
 }
+
 version = getVersionGit()

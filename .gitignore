@@ -8,3 +8,6 @@ allowlist.txt
 .gradle
 build
 public_suffix_list.dat
+import
+dump.txt
+src/BulkExtractor.java

@@ -42,6 +42,7 @@ public class Main {
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     public static final Set<String> arrWildcardExceptions = new HashSet<>();
     public static final Set<String> arrWildcardBlock = new HashSet<>();
+    public static int RAW_COUNT = 0;
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
@@ -151,10 +152,11 @@ public class Main {
             writer.println("#");
             writer.println("#Created using Simple Hosts Merger");
             writer.println("#Last Updated: " + dateFormat.format(Calendar.getInstance().getTime()));
+            writer.println("#Number of Entries:");
+            writer.println("#\tInput Count: " + RAW_COUNT);
+            writer.println("#\tResult Count: " + trueCount);
             if (trueCount != arrDomains.size()) {
-                writer.println("#Number of Entries: " + trueCount + " -> " + arrDomains.size());
-            } else {
-                writer.println("#Number of Entries: " + arrDomains.size());
+                writer.println("#\tAfter Wildcards: " + arrDomains.size());
             }
             writer.println("#");
             writer.println("#Created from the following lists");
@@ -254,6 +256,7 @@ public class Main {
             }
             while (fileIn.hasNext()) {
                 out.addAll(getDomainsFromString(fileIn.nextLine()));
+                RAW_COUNT++;
             }
             System.out.println("\tAdded " + out.size() + " entries");
         } catch (Exception e) {

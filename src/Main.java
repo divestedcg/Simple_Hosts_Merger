@@ -29,6 +29,8 @@ import java.security.MessageDigest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
@@ -137,7 +139,6 @@ public class Main {
         writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true, arrDomainsSorted.size());
         writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, false, arrDomainsSorted.size());
         writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true, arrDomainsSorted.size());
-
     }
 
     public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, boolean domainsOnly, int trueCount) {
@@ -303,27 +304,34 @@ public class Main {
                 && !line.startsWith("@");
     }
 
+    private static final ConcurrentLinkedQueue<Future<?>> futures = new ConcurrentLinkedQueue<>();
+
     public static Set<String> wildcardOptimizer(Set<String> domains) {
         Set<String> wildcards = new HashSet<>();
-        Set<String> domainsNew = new HashSet<>();
-        Map<String, Integer> occurrenceMap = new HashMap<>();
+        ConcurrentSkipListSet<String> domainsNew = new ConcurrentSkipListSet<>();
+        ConcurrentHashMap<String, AtomicInteger> occurrenceMap = new ConcurrentHashMap<>();
+        ThreadPoolExecutor threadPoolExecutorWork = new ThreadPoolExecutor(8, 8, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(4), new ThreadPoolExecutor.CallerRunsPolicy());
 
         // Count the occurrence of each entry with one level removed
         for (String domain : domains) {
-            String[] domainSplit = domain.split("\\.");
-            for (int shift = 1; shift < 20; shift++) {
-                if (domainSplit.length > shift + 1) {
-                    String shifted = jankSplit(domain, shift);
-                    if (shifted.length() > 0) {
-                        occurrenceMap.merge(shifted, 1, Integer::sum);
+            futures.add(threadPoolExecutorWork.submit(() -> {
+                String[] domainSplit = domain.split("\\.");
+                for (int shift = 1; shift < 20; shift++) {
+                    if (domainSplit.length > shift + 1) {
+                        String shifted = jankSplit(domain, shift);
+                        if (shifted.length() > 0) {
+                            occurrenceMap.putIfAbsent(shifted, new AtomicInteger());
+                            occurrenceMap.get(shifted).getAndIncrement();
+                        }
                     }
                 }
-            }
+            }));
         }
+        waitForThreadsComplete();
 
         // Mark entries with count past X as a wildcard candidate
-        for (Map.Entry<String, Integer> domain : occurrenceMap.entrySet()) {
-            if (domain.getValue() >= 50) {
+        for (Map.Entry<String, AtomicInteger> domain : occurrenceMap.entrySet()) {
+            if (domain.getValue().get() >= 50) {
                 wildcards.add(domain.getKey());
             }
         }
@@ -344,25 +352,29 @@ public class Main {
                 }
             }
         }
-        wildcards = wildcardsNew;
+        wildcards = null; //set null to prevent accidental use
 
         // Exclude all domains that would be matched by the wildcard and include the rest
         domainsNew.addAll(domains);
         for (String domain : domains) {
-            for (String wildcard : wildcards) {
-                if (domain.endsWith("." + wildcard)) {
-                    domainsNew.remove(domain);
+            futures.add(threadPoolExecutorWork.submit(() -> {
+                for (String wildcard : wildcardsNew) {
+                    if (domain.endsWith("." + wildcard)) {
+                        domainsNew.remove(domain);
+                    }
                 }
-            }
+            }));
         }
+        waitForThreadsComplete();
 
         //Add the wildcards
-        for (String wildcard : wildcards) {
+        for (String wildcard : wildcardsNew) {
             domainsNew.add("*." + wildcard);
             domainsNew.add(wildcard);
         }
 
-        System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcards.size())) + " domains with " + wildcards.size() + " wildcards");
+        threadPoolExecutorWork.shutdown();
+        System.out.println("Replaced " + (domains.size() - (domainsNew.size() - wildcardsNew.size())) + " domains with " + wildcardsNew.size() + " wildcards");
 
         return domainsNew;
     }
@@ -379,6 +391,18 @@ public class Main {
             }
         }
         return result.toString();
+    }
+
+    private static void waitForThreadsComplete() {
+        try {
+            for (Future<?> future : futures) {
+                future.get();
+                futures.remove(future);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        futures.clear();
     }
 
 }

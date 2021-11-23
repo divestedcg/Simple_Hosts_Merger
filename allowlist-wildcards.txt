@@ -157,8 +157,10 @@ wixsite.com
 wns.windows.com
 wordpress.com
 xiaomi.com
+xn--p1ai
 yahoo.co.jp
 yahoo.com
 yahoodns.net
 yandex.ru
+za
 zendesk.com

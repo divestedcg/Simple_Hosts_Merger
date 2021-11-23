@@ -39,6 +39,7 @@ public class Main {
     private static final Pattern hostnamePattern = Pattern.compile(hostnameRegex);
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     public static final Set<String> arrWildcardExceptions = new HashSet<>();
+    public static final Set<String> arrWildcardBlock = new HashSet<>();
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
@@ -62,6 +63,10 @@ public class Main {
         File allowListWildcards = new File("allowlist-wildcards.txt");
         if (allowListWildcards.exists()) {
             arrWildcardExceptions.addAll(readFileIntoArray(allowListWildcards));
+        }
+        File blockListWildcards = new File("blocklist-wildcards.txt");
+        if (blockListWildcards.exists()) {
+            arrWildcardBlock.addAll(readFileIntoArray(blockListWildcards));
         }
         File publicSuffixList = new File("public_suffix_list.dat");
         if (publicSuffixList.exists()) {
@@ -317,6 +322,7 @@ public class Main {
                 wildcards.add(domain.getKey());
             }
         }
+        wildcards.addAll(arrWildcardBlock);
 
         //Exclude removal of certain domains
         for (String exception : arrWildcardExceptions) {

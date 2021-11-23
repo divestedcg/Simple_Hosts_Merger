@@ -133,14 +133,14 @@ public class Main {
         System.out.println("Processed " + arrDomains.size() + " domains");
 
         //Get the output file
-        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted, false);
-        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true);
-        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, false);
-        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true);
+        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted, false, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, false, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true, arrDomainsSorted.size());
 
     }
 
-    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, boolean domainsOnly) {
+    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, boolean domainsOnly, int trueCount) {
         if (fileOut.exists()) {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
@@ -150,7 +150,11 @@ public class Main {
             writer.println("#");
             writer.println("#Created using Simple Hosts Merger");
             writer.println("#Last Updated: " + dateFormat.format(Calendar.getInstance().getTime()));
-            writer.println("#Number of Entries: " + arrDomains.size());
+            if (trueCount != arrDomains.size()) {
+                writer.println("#Number of Entries: " + trueCount + " -> " + arrDomains.size());
+            } else {
+                writer.println("#Number of Entries: " + arrDomains.size());
+            }
             writer.println("#");
             writer.println("#Created from the following lists");
             writer.println("#All attempts have been made to ensure accuracy of the corresponding license files and their compatibility.");
@@ -305,9 +309,10 @@ public class Main {
         Map<String, Integer> occurrenceMap = new HashMap<>();
 
         // Count the occurrence of each entry with one level removed
-        for (int shift = 1; shift < 20; shift++) {
-            for (String domain : domains) {
-                if (domain.split("\\.").length > shift + 1) {
+        for (String domain : domains) {
+            String[] domainSplit = domain.split("\\.");
+            for (int shift = 1; shift < 20; shift++) {
+                if (domainSplit.length > shift + 1) {
                     String shifted = jankSplit(domain, shift);
                     if (shifted.length() > 0) {
                         occurrenceMap.merge(shifted, 1, Integer::sum);

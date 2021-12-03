@@ -136,13 +136,14 @@ public class Main {
         System.out.println("Processed " + arrDomains.size() + " domains");
 
         //Get the output file
-        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted, false, arrDomainsSorted.size());
-        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, true, arrDomainsSorted.size());
-        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, false, arrDomainsSorted.size());
-        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, true, arrDomainsSorted.size());
+        writeOut(new File(args[2]), arrBlocklists, arrDomainsSorted, 0, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-domains"), arrBlocklists, arrDomainsSorted, 1, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, 0, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, 1, arrDomainsSorted.size());
+        writeOut(new File(args[2] + "-dnsmasq"), arrBlocklists, arrDomainsWildcardsSorted, 2, arrDomainsSorted.size());
     }
 
-    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, boolean domainsOnly, int trueCount) {
+    public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, int mode, int trueCount) {
         if (fileOut.exists()) {
             fileOut.renameTo(new File(fileOut + ".bak"));
         }
@@ -169,10 +170,18 @@ public class Main {
             }
             writer.println("#\n");
             for (String line : arrDomains) {
-                if (domainsOnly) {
-                    writer.println(line);
-                } else {
-                    writer.println("0.0.0.0 " + line);
+                switch(mode) {
+                    case 0: //hosts
+                        writer.println("0.0.0.0 " + line);
+                        break;
+                    case 1: //domains only
+                        writer.println(line);
+                        break;
+                    case 2: //dnsmasq
+                        if(!line.startsWith("*.")) {
+                            writer.println("address=/" + line + "/#");
+                        }
+                        break;
                 }
             }
             writer.close();

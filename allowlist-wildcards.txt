@@ -73,10 +73,10 @@ gstatic.net
 herokuapp.com
 libsyn.com
 llnwd.net
-vo.llnwd.net
 llnw.net
 microsoft.com
 msn.com
+myqcloud.com
 net.cdn.cloudflare.net
 net.edgekey.net
 net.edgesuite.net
@@ -148,6 +148,7 @@ us-east-1.elb.amazonaws.com
 us-east-2.amazonaws.com
 us-east-2.elb.amazonaws.com
 vk.com
+vo.llnwd.net
 web.core.windows.net
 webs.com
 weebly.com

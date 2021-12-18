@@ -27,7 +27,7 @@ https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt,GPLv3;
 https://v.firebog.net/hosts/Easylist.txt,GPLv3;
 https://v.firebog.net/hosts/Easyprivacy.txt,GPLv3;
 
-https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
+#https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
 
 https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_disguised_trackers_justdomains.txt,MIT;

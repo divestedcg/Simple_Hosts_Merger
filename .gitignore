@@ -11,3 +11,4 @@ public_suffix_list.dat
 import
 dump.txt
 src/BulkExtractor.java
+exclusions

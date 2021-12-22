@@ -125,7 +125,13 @@ public class Main {
 
         //Remove excluded entries
         int preSize = arrDomains.size();
-        arrDomains.removeAll(arrAllowlist);
+        ArrayList<String> arrDomainsRemoved = new ArrayList<>();
+        for(String domainToRemove : arrAllowlist) {
+            if(arrDomains.remove(domainToRemove)) {
+                arrDomainsRemoved.add(domainToRemove);
+            }
+        }
+        Collections.sort(arrDomainsRemoved);
         System.out.println("Removed " + (preSize - arrDomains.size()) + " excluded entries");
 
         //Sorting
@@ -141,6 +147,7 @@ public class Main {
         writeOut(new File(args[2] + "-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, 0, arrDomainsSorted.size());
         writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, 1, arrDomainsSorted.size());
         writeOut(new File(args[2] + "-dnsmasq"), arrBlocklists, arrDomainsWildcardsSorted, 2, arrDomainsSorted.size());
+        writeArrayToFile(new File(args[2] + "-removed"), arrDomainsRemoved);
     }
 
     public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, int mode, int trueCount) {
@@ -236,6 +243,24 @@ public class Main {
         return extension;
     }
 
+    public static void writeArrayToFile(File fileOut, ArrayList<String> contents) {
+        if (fileOut.exists()) {
+            fileOut.renameTo(new File(fileOut + ".bak"));
+        }
+        //Write the file
+        try {
+            PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
+            for (String line : contents) {
+                writer.println(line);
+            }
+            writer.close();
+            System.out.println("Wrote out to " + fileOut);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        contents.clear();
+    }
+
     public static ArrayList<String> readFileIntoArray(File in) {
         ArrayList<String> out = new ArrayList<>();
         try {
@@ -296,8 +321,12 @@ public class Main {
                 //.replaceAll("/.*", "");
                 matcher = hostnamePattern.matcher(aSpaceSplit);//Apply the pattern to the string
                 if (matcher.find()) {//Check if the string meets our requirements
-                    domains.add(matcher.group());
-                } else if (aSpaceSplit.contains("xn--")) {//Ugly
+                    String matchedDomain = matcher.group();
+/*                    if(matchedDomain.startsWith("www.")) {
+                        domains.add(matchedDomain.substring(4));
+                    }*/
+                    domains.add(matchedDomain);
+                } else if (aSpaceSplit.contains("xn--") && !aSpaceSplit.contains("/host/")) {//Ugly
                     domains.add(aSpaceSplit);
                 }
             }

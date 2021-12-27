@@ -111,9 +111,9 @@ public class Main {
         for (String list : arrBlocklists) {
             String url = list.split(",")[0];
             try {
-                System.out.println("Processing " + url);
                 //Download the file
                 String encodedName = byteArrayToHexString(MessageDigest.getInstance("MD5").digest(url.getBytes(StandardCharsets.UTF_8)));
+                System.out.println("Processing " + url + " / " + encodedName);
                 File out = new File(cacheDir, encodedName + identifyFileType(url));
                 downloadFile(url, out.toPath());
                 //Parse the file

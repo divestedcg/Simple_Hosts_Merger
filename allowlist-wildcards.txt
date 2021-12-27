@@ -82,6 +82,7 @@ net.edgekey.net
 net.edgesuite.net
 nyud.net
 nyu.edu
+porkbun.com
 pub.3gppnetwork.org
 qq.com
 roku.com

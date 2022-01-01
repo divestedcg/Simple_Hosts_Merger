@@ -43,6 +43,8 @@ public class Main {
     public static final Set<String> arrWildcardExceptions = new HashSet<>();
     public static final Set<String> arrWildcardBlock = new HashSet<>();
     public static int RAW_COUNT = 0;
+    public static final HashMap<String, HashSet<String>> listMap = new HashMap<>();
+    public static boolean CACHE_ONLY = false; //For testing use
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
@@ -117,7 +119,10 @@ public class Main {
                 File out = new File(cacheDir, encodedName + identifyFileType(url));
                 downloadFile(url, out.toPath());
                 //Parse the file
-                arrDomains.addAll(readHostsFileIntoArray(out));
+                HashSet<String> listResult = new HashSet<>();
+                listResult.addAll(readHostsFileIntoArray(out));
+                listMap.put(url, listResult);
+                arrDomains.addAll(listResult);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -126,8 +131,8 @@ public class Main {
         //Remove excluded entries
         int preSize = arrDomains.size();
         ArrayList<String> arrDomainsRemoved = new ArrayList<>();
-        for(String domainToRemove : arrAllowlist) {
-            if(arrDomains.remove(domainToRemove)) {
+        for (String domainToRemove : arrAllowlist) {
+            if (arrDomains.remove(domainToRemove)) {
                 arrDomainsRemoved.add(domainToRemove);
             }
         }
@@ -148,6 +153,37 @@ public class Main {
         writeOut(new File(args[2] + "-domains-wildcards"), arrBlocklists, arrDomainsWildcardsSorted, 1, arrDomainsSorted.size());
         writeOut(new File(args[2] + "-dnsmasq"), arrBlocklists, arrDomainsWildcardsSorted, 2, arrDomainsSorted.size());
         writeArrayToFile(new File(args[2] + "-removed"), arrDomainsRemoved);
+        generateCrossCheck(new File(args[2] + "-xcheck"));
+    }
+
+    public static void generateCrossCheck(File out) {
+        System.out.println("Generating crosscheck results");
+        ArrayList<String> xcheckResult = new ArrayList<>();
+        for (Map.Entry<String, HashSet<String>> entry : listMap.entrySet()) {
+            xcheckResult.add(entry.getKey());
+            xcheckResult.add("----------------------------------------------------------------");
+            boolean matchFound = false;
+            for (Map.Entry<String, HashSet<String>> recurseEntry : listMap.entrySet()) {
+                if (!recurseEntry.getKey().equals(entry.getKey())) {
+                    int count = 0;
+                    for (String domain : entry.getValue()) {
+                        if (recurseEntry.getValue().contains(domain)) {
+                            count++;
+                        }
+                    }
+                    int percent = (int) ((100D / recurseEntry.getValue().size()) * count);
+                    if (count != 0 && percent > 0) {
+                        xcheckResult.add(count + "\t~" + percent + "%" + "\t\t" + recurseEntry.getKey());
+                        matchFound = true;
+                    }
+                }
+            }
+            if (!matchFound) {
+                xcheckResult.add("No significant number of entries found in any other lists.");
+            }
+            xcheckResult.add("\n");
+        }
+        writeArrayToFile(out, xcheckResult);
     }
 
     public static void writeOut(File fileOut, ArrayList<String> arrBlocklists, ArrayList<String> arrDomains, int mode, int trueCount) {
@@ -177,7 +213,7 @@ public class Main {
             }
             writer.println("#\n");
             for (String line : arrDomains) {
-                switch(mode) {
+                switch (mode) {
                     case 0: //hosts
                         writer.println("0.0.0.0 " + line);
                         break;
@@ -185,7 +221,7 @@ public class Main {
                         writer.println(line);
                         break;
                     case 2: //dnsmasq
-                        if(!line.startsWith("*.")) {
+                        if (!line.startsWith("*.")) {
                             writer.println("address=/" + line + "/#");
                         }
                         break;
@@ -207,16 +243,20 @@ public class Main {
             if (out.toFile().exists()) {
                 connection.setIfModifiedSince(out.toFile().lastModified());
             }
-            connection.connect();
-            int res = connection.getResponseCode();
-            if (res != 304 && (res == 200 || res == 301 || res == 302)) {
-                Files.copy(connection.getInputStream(), out, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("\tSuccessfully downloaded");
+            if (out.toFile().exists() && CACHE_ONLY) {
+                System.out.println("\tUsing cached version");
+            } else {
+                connection.connect();
+                int res = connection.getResponseCode();
+                if (res != 304 && (res == 200 || res == 301 || res == 302)) {
+                    Files.copy(connection.getInputStream(), out, StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("\tSuccessfully downloaded");
+                }
+                if (res == 304) {
+                    System.out.println("\tFile not changed");
+                }
+                connection.disconnect();
             }
-            if (res == 304) {
-                System.out.println("\tFile not changed");
-            }
-            connection.disconnect();
         } catch (Exception e) {
             e.printStackTrace();
         }

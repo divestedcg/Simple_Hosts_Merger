@@ -34,6 +34,8 @@ https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_dis
 https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt,MIT;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/StreamingAds/hosts,MIT;
 https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt,MIT;
+https://raw.githubusercontent.com/infinitytec/blocklists/master/ads-and-trackers.txt,MIT;
+https://raw.githubusercontent.com/infinitytec/blocklists/master/scams-and-phishing.txt,MIT;
 https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/domains,MIT;
 #https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt,MIT;
 https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hacked-domains.list,MIT;
@@ -42,6 +44,7 @@ https://raw.githubusercontent.com/paulgb/BarbBlock/master/blacklists/domain-list
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MIT;
+https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt,MIT;
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/ads-and-tracking-extended.txt,Apache-2.0;
@@ -53,7 +56,21 @@ https://raw.githubusercontent.com/bkrcrc/turk-adlist/master/hosts,CC BY-SA 3.0;
 https://raw.githubusercontent.com/omicron-b/custom-filters/master/domains_imported.txt,CC BY-SA 3.0;
 https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt,CC BY-SA 4.0;
 https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt,CC BY-SA 4.0;
+#https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/cryptojacking/domains,CC BY-SA 4.0;
+https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/malware/domains,CC BY-SA 4.0;
+https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/phishing/domains,CC BY-SA 4.0;
+https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/stalkerware/domains,CC BY-SA 4.0;
 https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt,CC BY-SA 4.0;
+
+https://blocklistproject.github.io/Lists/alt-version/ads-nl.txt,Unlicense;
+#https://blocklistproject.github.io/Lists/alt-version/crypto-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/smart-tv-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/tracking-nl.txt,Unlicense;
 
 https://curben.gitlab.io/malware-filter/urlhaus-filter-hosts.txt,CC0;
 #https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
@@ -65,7 +82,9 @@ https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;
 https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/steamscamsite.txt,WTFPLv2;
 
 https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
+https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook.txt,Public Domain;
 
+https://phishing.army/download/phishing_army_blocklist.txt,CC BY-NC 4.0;
 https://phishing.army/download/phishing_army_blocklist_extended.txt,CC BY-NC 4.0;
 https://v.firebog.net/hosts/static/w3kbl.txt,CC BY-NC 4.0;
 
@@ -76,7 +95,13 @@ https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole
 https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
 
 http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
+https://joewein.net/dl/bl/dom-bl.txt,AS-IS NC;
+https://joewein.net/dl/bl/dom-bl-base.txt,AS-IS NC;
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
+
+https://raw.githubusercontent.com/cbuijs/shallalist/master/adv/domains,Shalla;
+https://raw.githubusercontent.com/cbuijs/shallalist/master/tracker/domains,Shalla;
+https://raw.githubusercontent.com/cbuijs/shallalist/master/spyware/domains,Shalla;
 
 https://curben.gitlab.io/malware-filter/pup-filter-hosts.txt,Zhouhan Chen;
 
@@ -88,6 +113,15 @@ https://raw.githubusercontent.com/astryzia/stalkerware-urls/main/stalkerware_url
 #https://raw.githubusercontent.com/chiehmin/MinMinGuard/master/app/src/main/assets/host/output_file,Unknown;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts,Unknown;
 https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/alexa,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/apple,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/huawei,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/roku,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/samsung,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/sonos,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/windows,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/xiaomi,Unknown;
+https://raw.githubusercontent.com/nextdns/metadata/master/security/parked-domains-cname,Unknown;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-amnenstytech.txt,Unknown;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-certego.txt,Unknown;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-citizenlabs.txt,Unknown;

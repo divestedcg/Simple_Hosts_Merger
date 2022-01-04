@@ -1,7 +1,7 @@
 #Contains permissively licensed lists
 
 #https://divested.dev/blocklists/ExperimentalV2.txt,GPLv3;
-https://divested.dev/blocklists/ExperimentalV3.txt,GPLv3;
+#https://divested.dev/blocklists/ExperimentalV3.txt,GPLv3;
 https://divested.dev/blocklists/ExperimentalV4.txt,GPLv3;
 https://divested.dev/blocklists/Cameras.txt,GPLv3;
 https://divested.dev/blocklists/Cyanogen.txt,GPLv3;

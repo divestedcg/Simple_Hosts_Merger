@@ -71,9 +71,11 @@ google.com
 gstatic.com
 gstatic.net
 herokuapp.com
+imgsmail.ru
 libsyn.com
 llnwd.net
 llnw.net
+mail.ru
 microsoft.com
 msn.com
 myqcloud.com

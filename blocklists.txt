@@ -5,13 +5,13 @@
 https://divested.dev/blocklists/ExperimentalV4.txt,GPLv3;
 https://divested.dev/blocklists/Cameras.txt,GPLv3;
 https://divested.dev/blocklists/Cyanogen.txt,GPLv3;
-https://divested.dev/blocklists/Genealogy.txt,GPLv3;
+#https://divested.dev/blocklists/Genealogy.txt,GPLv3;
 https://divested.dev/blocklists/LG.txt,GPLv3;
 https://divested.dev/blocklists/Misc.txt,GPLv3;
 https://divested.dev/blocklists/Mobile.txt,GPLv3;
 https://divested.dev/blocklists/Mozilla.txt,GPLv3;
 https://divested.dev/blocklists/Scams.txt,GPLv3;
-https://divested.dev/blocklists/Toxic.txt,GPLv3;
+#https://divested.dev/blocklists/Toxic.txt,GPLv3;
 
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt,GPLv3;
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt,GPLv3;

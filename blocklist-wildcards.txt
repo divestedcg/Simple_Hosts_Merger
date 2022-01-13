@@ -431,7 +431,6 @@ awempire.com
 awin.com
 awtank.com
 axf8.net
-azureedge.net
 b2badvantage.net
 b2b-mail.net
 b2c.com
@@ -542,7 +541,6 @@ brazabaya.com
 braze.com
 braze.eu
 bricknet.com
-brightcove.com
 brightedge.com
 britishwirewheel.com
 broadband.hu
@@ -620,7 +618,6 @@ channeladvisor.com
 channelintelligence.com
 chartbeat.com
 chartboost.com
-charter.com
 charterfunding.com
 chasef.com
 chatodel.com
@@ -691,7 +688,6 @@ com1.ru
 comanav.com
 comapplovin.com
 com.bd
-comcast.net
 com-cst.net
 cometsystems.com
 comhem.se
@@ -1039,7 +1035,6 @@ fibertel.com.ar
 fifth.pw
 fiksu.com
 fileave.com
-files.wordpress.com
 filled.pw
 filoso.info
 findanswersnow.net
@@ -1527,7 +1522,6 @@ lenovowantsyouqq.com
 lentainform.com
 lesmondesimaginaires.com
 letv.com
-level3.net
 levexis.com
 levitrawelloch.in
 lexisnexis.com
@@ -2262,7 +2256,6 @@ sasisa.ru
 savethechilden.org
 savetubevideo.com
 saymedia.com
-sbcglobal.net
 scampagetesting123.duckdns.org
 scd.yahoo.com
 scorecardresearch.com
@@ -2365,7 +2358,6 @@ socialgo.com
 sociaplus.com
 so.com
 sodoit.com
-softonic.com
 softonic.it
 sogou.com
 sohu.com
@@ -2397,7 +2389,6 @@ splunk.com
 spongecell.com
 sponsorpay.com
 spotad.co
-spotify.com
 spot.im
 spotxchange.com
 spoutable.com
@@ -2458,7 +2449,6 @@ surveygizmo.com
 sushipool.com
 svcmot.com
 svcoding.com
-swbell.net
 switchadhub.com
 switzerlandjobsdb.org
 swmd.org
@@ -2531,7 +2521,6 @@ thewiber.com
 thinknearhub.com
 thirdpresence.com
 thisisyourchangeqq.com
-three.co.uk
 threembb.co.uk
 thruport.com
 thunderhead.com
@@ -2554,8 +2543,6 @@ tnz.yahoo.co.jp
 toboads.com
 tokoapril.com
 tomile.com
-t-online.de
-t-online.hu
 tooon.duckdns.org
 topkorder.su
 torentgames.info
@@ -2887,7 +2874,6 @@ yumenetworks.com
 yuojizz.com
 yusp.com
 yyjvimo.com
-z13.web.core.windows.net
 zambianairways.com
 zangocash.com
 zango.com

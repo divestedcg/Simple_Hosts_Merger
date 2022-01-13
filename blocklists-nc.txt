@@ -65,7 +65,7 @@ https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt,CC BY-
 https://blocklistproject.github.io/Lists/alt-version/ads-nl.txt,Unlicense;
 #https://blocklistproject.github.io/Lists/alt-version/crypto-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt,Unlicense;
-https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt,Unlicense;
+#https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt,Unlicense;

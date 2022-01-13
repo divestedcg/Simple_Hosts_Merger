@@ -60,6 +60,13 @@ public class Main {
         File allowlist = new File(args[0]);
         if (allowlist.exists()) {
             arrAllowlist.addAll(readFileIntoArray(allowlist));
+            final Set<String> arrAllowlistWWW = new HashSet<>();
+            for(String domain : arrAllowlist) {
+                if (!domain.startsWith("www.")) {
+                    arrAllowlistWWW.add("www." + domain);
+                }
+            }
+            arrAllowlist.addAll(arrAllowlistWWW);
             System.out.println("Loaded " + arrAllowlist.size() + " excluded domains");
         } else {
             System.out.println("Allowlist file doesn't exist!");

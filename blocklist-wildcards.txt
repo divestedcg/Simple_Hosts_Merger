@@ -121,6 +121,7 @@ ad2iction.com
 ad4989.co.kr
 ad4m.at
 ad4mat.net
+ad6.fr
 ad6media.fr
 ad7.com
 adacado.com
@@ -135,6 +136,7 @@ adblade.com
 ad-brix.com
 adbrix.io
 adbureau.net
+adclixx.net
 ad-cloud.jp
 adcolony.com
 adconion.com
@@ -156,12 +158,14 @@ ad.gt
 adhese.com
 adhigh.net
 adhood.com
+adhost.com
 adiant.com
 adikteev.com
 adinfuse.com
 adinte.jp
 adiquity.com
 adition.com
+adjarabet.com
 adj.st
 adjuggler.net
 adjust.com
@@ -206,14 +210,17 @@ adnxs.com
 adobedc.net
 adocean.pl
 adomik.com
+adoptim.com
 adoric-om.com
 adorika.com
 adotmob.com
+adotube.com
 adozeuds.com
 adperfect.com
 adpies.com
 adplxmd.com
 adpost.com
+adprotect.net
 adpush.cn
 adpushup.com
 adready.com
@@ -243,6 +250,7 @@ adspirit.de
 adspirit.net
 ad-srv.net
 adsrvr.org
+adsrv.wtf
 adsservingtwig.xyz
 ad-stir.com
 adsupply.com
@@ -378,6 +386,7 @@ appnext.com
 appnexus.com
 appodeal.com
 apponic.com
+appsdorado.com
 appsee.com
 appsflyer.com
 apptap.com
@@ -562,6 +571,7 @@ businessconsults.net
 bussines-news.info
 buycocaineonline.se
 buysellads.com
+buy-targeted-traffic.com
 buzzcity.net
 buzzdeck.com
 by.files.1drv.com
@@ -595,6 +605,7 @@ casalemedia.com
 casino-sicuro.it
 casinotropez.com
 cas.ms
+catchtheclick.com
 cba.pl
 cbarsrv.com
 cbsi.com
@@ -648,6 +659,7 @@ clarkmotorco.com
 clearsale.com.br
 clevernt.com
 clevertap.com
+click2sell.eu
 clickability.com
 clickbank.net
 clickdesk.com
@@ -655,6 +667,7 @@ clickfunnels.com
 clickintext.net
 click-it-now.online
 clickmeter.com
+click-now-on.me
 clickpoint.com
 clicksure.com
 clicktale.com
@@ -665,6 +678,7 @@ clmbtech.com
 clone147.com
 cloudapp.azure.com
 cloud-iq.com
+cloudtraff.com
 cloudwatch.net
 clrstm.com
 cmaxsrv.com
@@ -904,7 +918,9 @@ edmontonbrandpartnerevents.com
 edomz.com
 edu.bd
 edvfwlacluo.com
+effectivecpmcontent.com
 effectivecpmgate.com
+effectivegatetocontent.com
 effectivemeasure.net
 effectiveperformancenetwork.com
 effiliation.com
@@ -974,6 +990,7 @@ eurekster.com
 europacasino.com
 eurostretch.ru
 eventbtite.com
+everestengagement.com
 everesttech.net
 evergage.com
 everyplay.com
@@ -1359,7 +1376,9 @@ innovid.com
 inoutpost.info
 inpref.com
 inq.com
+inside-graph.com
 insightexpressai.com
+insightfirst.com
 insigit.com
 inskinmedia.com
 instabug.com
@@ -1371,6 +1390,7 @@ intelliad.de
 intellicontact.com
 intellitxt.com
 intentiq.com
+intentmedia.net
 interact.sh
 intercom.io
 invictawatches.com
@@ -1623,6 +1643,7 @@ maymaxy.xyz
 maytrics.com
 mbai.cn
 mbww.com
+m-counter.ru
 mc.yandex.ru
 mdes.org
 mdhv.io
@@ -1877,6 +1898,7 @@ now.im
 nr-data.net
 ns1p.net
 ns8ds.com
+nsaudience.pl
 nsmartad.com
 nspmotion.com
 nswap.info
@@ -2111,13 +2133,17 @@ push4site.com
 push-ad.com
 pushails.com
 pushalert.co
+pushassist.com
 pushbird.com
 pushcrew.com
 pushengage.com
+pushnews.eu
 push-notifications.top
 pushofferpro.com
 pushprofit.ru
+pushpushgo.com
 pushwoosh.com
+push.world
 putags.com
 putana.cz
 pvclouds.com
@@ -2140,6 +2166,7 @@ qwapi.com
 qwilr.com
 qzone.qq.com
 rabidshare.info
+radar.imgsmail.ru
 radissonsblu.com
 rakutenmarketing.com
 rambler.ru
@@ -2321,6 +2348,7 @@ siteapps.com
 siteimproveanalytics.io
 siteimprove.com
 sitemeter.com
+sitescoutadserver.com
 sitescout.com
 sitetag.us
 sizmdx.com
@@ -2476,9 +2504,11 @@ tapjoyads.com
 tapjoy.com
 tapjoyconnect.com
 taplytics.com
+tappx.com
 tapsense.com
 tapstream.com
 taptapnetworks.com
+target2sell.com
 targetnet.com
 tarungdrajatsiokalama.com
 tavmo.com
@@ -2570,6 +2600,7 @@ traffic-c.com
 trafficfactory.biz
 trafficforce.com
 trafficholder.com
+trafficjunky.com
 trafficjunky.net
 transpera.com
 travelpayouts.com
@@ -2587,6 +2618,8 @@ tripod.com
 tropicanagoldcasino.com
 truconversion.com
 tru.io
+trustedcpmrevenue.com
+trustedgatetocontent.com
 trustonline.org
 trvdp.com
 tsx.org
@@ -2615,6 +2648,7 @@ ubiyoo.com
 uc.cn
 ucgalleries.com
 ucoz.com
+ucoz.net
 ucoz.ru
 ucweb.com
 ukbypass.info
@@ -2771,6 +2805,7 @@ webzone51.tk
 wecloud.io
 wemfbox.ch
 wenpie.com
+we-stats.com
 westcentralgacac.org
 wesua.info
 whatshelp.io

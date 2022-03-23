@@ -72,7 +72,7 @@ public class Main {
             System.out.println("Allowlist file doesn't exist!");
             System.exit(1);
         }
-        File allowListWildcards = new File("allowlist-wildcards.txt");
+        File allowListWildcards = new File("allowlist-wildcards.txt"); //TODO: remove me, replaced by dnsrm
         if (allowListWildcards.exists()) {
             arrWildcardExceptions.addAll(readFileIntoArray(allowListWildcards));
         }

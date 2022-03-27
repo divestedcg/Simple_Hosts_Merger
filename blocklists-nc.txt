@@ -7,6 +7,7 @@
 https://divested.dev/blocklists/ExperimentalV4.txt,GPLv3;
 https://divested.dev/blocklists/Cameras.txt,GPLv3;
 https://divested.dev/blocklists/Cyanogen.txt,GPLv3;
+https://divested.dev/blocklists/Disconnect.txt,GPLv3;
 #https://divested.dev/blocklists/Genealogy.txt,GPLv3;
 https://divested.dev/blocklists/LG.txt,GPLv3;
 https://divested.dev/blocklists/Misc.txt,GPLv3;

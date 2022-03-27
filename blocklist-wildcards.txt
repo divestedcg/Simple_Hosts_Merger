@@ -386,7 +386,6 @@ aoscmt.com
 aoscufe.com
 apester.com
 api-05.com
-api.binance.com
 apigeen.net
 api-hotjar.com
 aplus.net
@@ -1152,6 +1151,8 @@ flightnework.com
 flipboard.com
 flocktory.com
 flu.cc
+fluency.inc
+fluencyinc.co
 fluentmobile.com
 fluidsurveys.com
 flurry.com
@@ -1591,7 +1592,6 @@ k8s.sendgrid.net
 kabelbw.de
 kahulasup.ch
 kahuna.com
-kaltura.com
 kameleoon.com
 kameleoon.eu
 kampyle.com
@@ -1825,6 +1825,9 @@ messnger.com
 me-talk.ru
 metalyzer.com
 metric.gstatic.com
+metrics.apple.com
+metrics.icloud.com
+metrics.mzstatic.com
 metriweb.be
 mfsa.info
 mg2connext.com
@@ -2487,6 +2490,7 @@ sdrm.duckdns.org
 searchmagnified.com
 searchmgr.com
 securedvisit.com
+securemetrics.apple.com
 securestudies.com
 securitassecurity.com
 securitymetrics.com
@@ -2681,6 +2685,7 @@ sun-time.org
 supersonicads.com
 superstats.com
 supplyframe.com
+supportmetrics.apple.com
 surf-town.net
 surge.sh
 surveygizmo.com

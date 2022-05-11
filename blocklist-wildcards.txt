@@ -1226,6 +1226,8 @@ ct8.pl
 ctasnet.com
 ct.sendgrid.net
 cubics.com
+cuebiq.ai
+cuebiq.com
 cu.ma
 cuminside.club
 cupofteacafe.com
@@ -1870,7 +1872,6 @@ goruli.com
 gosquared.com
 gostats.com
 gotostat.ru
-gov.bd
 govtax.com
 gpdi-lippocikarang.com
 gpsocialapp.com
@@ -3929,6 +3930,7 @@ touchclarity.com
 touchcommerce.com
 touchdownworld.cz
 touchtype-fluency.com
+towerdata.com
 toythieves.com
 tp2.yahoo.com
 tpbid.com

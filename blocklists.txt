@@ -25,6 +25,8 @@ https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt,GPLv3;
 https://v.firebog.net/hosts/Easylist.txt,GPLv3;
 https://v.firebog.net/hosts/Easyprivacy.txt,GPLv3;
+https://v.firebog.net/hosts/AdguardDNS.txt,GPLv3;
+https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt,GPLv3;
 
 #https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
@@ -45,6 +47,7 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracki
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MIT;
 #https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt,MIT;
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
+https://v.firebog.net/hosts/Admiral.txt,MIT;
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/ads-and-tracking-extended.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/tracking-aggressive-extended.txt,Apache-2.0;

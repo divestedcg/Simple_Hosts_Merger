@@ -1,3 +1,5 @@
 Simply utiltiy to merge, sort, and deduplicate HOSTS files.
 
+Prebuilts via CI: https://gitlab.com/divested/simple_hosts_merger/-/jobs/artifacts/master/browse?job=build
+
 Donate: https://divested.dev/donate

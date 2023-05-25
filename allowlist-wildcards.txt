@@ -56,7 +56,6 @@ dualstack.eu-west-2.amazonaws.com
 dualstack.eu-west-3.amazonaws.com
 dualstack.sa-east-1.amazonaws.com
 dualstack.us-east-1.amazonaws.com
-duckdns.org
 edgekey.net
 edgesuite.net
 elasticbeanstalk.com

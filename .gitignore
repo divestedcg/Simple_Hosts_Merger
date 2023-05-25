@@ -7,7 +7,7 @@ whitelist.txt
 allowlist.txt
 .gradle
 build
-public_suffix_list.dat
+public_suffix_list*.dat
 import
 dump.txt
 src/BulkExtractor.java

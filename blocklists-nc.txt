@@ -27,8 +27,12 @@ https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt,GPLv3;
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt,GPLv3;
 https://v.firebog.net/hosts/Easylist.txt,GPLv3;
 https://v.firebog.net/hosts/Easyprivacy.txt,GPLv3;
+https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/EasyPrivacyCNAME.txt,GPLv3;
 https://v.firebog.net/hosts/AdguardDNS.txt,GPLv3;
+https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardTracking.txt,GPLv3;
+https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardCNAME.txt,GPLv3;
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt,GPLv3;
+https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileSpyware.txt,GPLv3;
 
 #https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;

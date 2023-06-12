@@ -999,7 +999,7 @@ cdnma.com
 cdnsoar.com
 cdnxiazai.com
 cedexis.com
-cedexis.net
+radar.cedexis.net
 cedexis-radar.net
 cedexis-test.com
 celeb-ads.com

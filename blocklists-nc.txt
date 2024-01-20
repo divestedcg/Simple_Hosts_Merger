@@ -214,6 +214,7 @@ https://raw.githubusercontent.com/nextdns/metadata/master/security/parked-domain
 https://v.firebog.net/hosts/APT1Rep.txt,Unknown;
 https://www.stopforumspam.com/downloads/toxic_domains_whole.txt,Unknown;
 http://sysctl.org/cameleon/hosts,Unknown;
+https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt,Unknown;
 
 #Dead
 https://hosts-file.net/ad_servers.txt,hpHosts;

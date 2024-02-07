@@ -2,19 +2,19 @@
 #Should be strictly used for private personal non commercial use only
 #eg. for on a Pi DNS server where merging lists can take a while
 
-#https://divested.dev/blocklists/ExperimentalV2.txt,GPLv3;
-#https://divested.dev/blocklists/ExperimentalV3.txt,GPLv3;
-https://divested.dev/blocklists/ExperimentalV4.txt,GPLv3;
-https://divested.dev/blocklists/Cameras.txt,GPLv3;
-https://divested.dev/blocklists/Cyanogen.txt,GPLv3;
+#https://divested.dev/blocklists/ExperimentalV2.txt,CC0;
+#https://divested.dev/blocklists/ExperimentalV3.txt,CC0;
+https://divested.dev/blocklists/ExperimentalV4.txt,CC0;
+https://divested.dev/blocklists/Cameras.txt,CC0;
+https://divested.dev/blocklists/Cyanogen.txt,CC0;
 https://divested.dev/blocklists/Disconnect.txt,GPLv3;
-#https://divested.dev/blocklists/Genealogy.txt,GPLv3;
-https://divested.dev/blocklists/LG.txt,GPLv3;
-https://divested.dev/blocklists/Misc.txt,GPLv3;
+#https://divested.dev/blocklists/Genealogy.txt,CC0;
+https://divested.dev/blocklists/LG.txt,CC0;
+https://divested.dev/blocklists/Misc.txt,CC0;
 https://divested.dev/blocklists/Mobile.txt,GPLv3;
-https://divested.dev/blocklists/Mozilla.txt,GPLv3;
-https://divested.dev/blocklists/Scams.txt,GPLv3;
-#https://divested.dev/blocklists/Toxic.txt,GPLv3;
+https://divested.dev/blocklists/Mozilla.txt,CC0;
+https://divested.dev/blocklists/Scams.txt,CC0;
+#https://divested.dev/blocklists/Toxic.txt,CC0;
 
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt,GPLv3;
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt,GPLv3;

@@ -57,6 +57,7 @@ https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-akam
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-alienlabs.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-alternate.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-amnenstytech.txt,MIT;
+https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-antiy.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-avast.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-bitdefender.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-blackberry.txt,MIT;
@@ -118,6 +119,7 @@ https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-posi
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-prodraft.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-proofpoint.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-qianxin.txt,MIT;
+https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-quointelligence.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-recordedfuture.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-reecdeep.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-sansec.txt,MIT;

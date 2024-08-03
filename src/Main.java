@@ -48,8 +48,9 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Simple Hosts Merger");
-        System.out.println("Copyright 2015-2021 Divested Computing Group");
-        System.out.println("License: GPLv3\n");
+        System.out.println("Copyright 2015-2022 Divested Computing Group");
+        System.out.println("License: AGPL-3.0-or-later");
+        System.out.println("Source Code: https://codeberg.org/divested/simple_hosts_merger\n");
         if (args.length != 4) {
             System.out.println("Four arguments required: exclusion file, blocklists config (format: link,license;\\n), output file, cache dir");
             System.exit(1);
@@ -202,6 +203,7 @@ public class Main {
             PrintWriter writer = new PrintWriter(fileOut, "UTF-8");
             writer.println("#");
             writer.println("#Created using Simple Hosts Merger");
+            writer.println("#Simple Hosts Merger is licensed AGPL-3.0-or-later and available via https://codeberg.org/divested/simple_hosts_merger");
             writer.println("#Last Updated: " + dateFormat.format(Calendar.getInstance().getTime()));
             writer.println("#Number of Entries:");
             writer.println("#\tInput Count: " + RAW_COUNT);

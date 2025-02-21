@@ -52,6 +52,7 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MI
 #https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt,MIT;
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
 https://v.firebog.net/hosts/Admiral.txt,MIT;
+https://raw.githubusercontent.com/xRuffKez/NRD/refs/heads/main/lists/14-day_phishing/domains-only/nrd-phishing-14day.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ahnlab.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-akamai.txt,MIT;
 https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-alienlabs.txt,MIT;

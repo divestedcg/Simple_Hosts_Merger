@@ -214,7 +214,7 @@ https://raw.githubusercontent.com/cbuijs/shallalist/master/spyware/domains,Shall
 https://curben.gitlab.io/malware-filter/pup-filter-hosts.txt,Zhouhan Chen;
 
 https://gist.githubusercontent.com/ACK-J/65dfe84fcf5a06c46364e5f2bd29c118/raw/d50dbd66d43f3d21961d182846ba3709d3f88947/ThreatMetrixEndpoints.txt,Unknown;
-https://hosts.oisd.nl,Unknown;
+https://big.oisd.nl/domainswild2,Unknown;
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 https://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;
 https://raw.githubusercontent.com/astryzia/stalkerware-urls/main/stalkerware_urls.txt,Unknown;

@@ -39,7 +39,7 @@ public class Main {
 
     private static final String hostnameRegex = "^((?!-)[A-Za-z0-9-]{1,63}(?<!-)\\.)+[A-Za-z]{2,6}$"; //Credit: http://www.mkyong.com/regular-expressions/domain-name-regular-expression-example/
     private static final Pattern hostnamePattern = Pattern.compile(hostnameRegex);
-    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     public static final Set<String> arrWildcardExceptions = new HashSet<>();
     public static final Set<String> arrWildcardBlock = new HashSet<>();
     public static int RAW_COUNT = 0;

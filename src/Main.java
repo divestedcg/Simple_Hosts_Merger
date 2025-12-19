@@ -375,7 +375,7 @@ public class Main {
                         domains.add(matchedDomain.substring(4));
                     }*/
                     domains.add(matchedDomain);
-                } else if (aSpaceSplit.contains("xn--") && !aSpaceSplit.contains("/host/")) {//Ugly
+                } else if (aSpaceSplit.contains("xn--") && !aSpaceSplit.contains("/host/") && !aSpaceSplit.startsWith("||")) {//Ugly
                     domains.add(aSpaceSplit);
                 }
             }

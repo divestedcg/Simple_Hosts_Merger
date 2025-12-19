@@ -2,19 +2,15 @@
 #Should be strictly used for private personal non commercial use only
 #eg. for on a Pi DNS server where merging lists can take a while
 
-#https://divested.dev/blocklists/ExperimentalV2.txt,CC0;
-#https://divested.dev/blocklists/ExperimentalV3.txt,CC0;
 https://divested.dev/blocklists/ExperimentalV4.txt,CC0;
 https://divested.dev/blocklists/Cameras.txt,CC0;
 https://divested.dev/blocklists/Cyanogen.txt,CC0;
 https://divested.dev/blocklists/Disconnect.txt,GPLv3;
-#https://divested.dev/blocklists/Genealogy.txt,CC0;
 https://divested.dev/blocklists/LG.txt,CC0;
 https://divested.dev/blocklists/Misc.txt,CC0;
 https://divested.dev/blocklists/Mobile.txt,GPLv3;
 https://divested.dev/blocklists/Mozilla.txt,CC0;
 https://divested.dev/blocklists/Scams.txt,CC0;
-#https://divested.dev/blocklists/Toxic.txt,CC0;
 
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt,GPLv3;
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt,GPLv3;
@@ -33,14 +29,14 @@ https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardTracking.txt,
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardCNAME.txt,GPLv3;
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt,GPLv3;
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileSpyware.txt,GPLv3;
-
-#https://www.hostsfile.org/Downloads/hosts.txt,LGPLv2;
-https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser,AGPLv3;
+https://big.oisd.nl/domainswild2,GPLv3;
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.plus.txt,GPLv3;
+#https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/ultimate.txt,GPLv3;
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt,GPLv3;
 
 https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_ads.txt,MIT;
 https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_trackers.txt,MIT;
 https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt,MIT;
-https://raw.githubusercontent.com/FadeMind/hosts.extras/master/StreamingAds/hosts,MIT;
 https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt,MIT;
 https://raw.githubusercontent.com/infinitytec/blocklists/master/ads-and-trackers.txt,MIT;
 https://raw.githubusercontent.com/infinitytec/blocklists/master/scams-and-phishing.txt,MIT;
@@ -52,106 +48,18 @@ https://raw.githubusercontent.com/paulgb/BarbBlock/master/blacklists/domain-list
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt,MIT;
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt,MIT;
-https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt,MIT;
 https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts,MIT;
 https://v.firebog.net/hosts/Admiral.txt,MIT;
-https://raw.githubusercontent.com/xRuffKez/NRD/refs/heads/main/lists/14-day_phishing/domains-only/nrd-phishing-14day.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ahnlab.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-akamai.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-alienlabs.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-alternate.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-amnenstytech.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-antiy.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-avast.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-bitdefender.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-blackberry.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-bsi.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-certagid.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-certfa.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-certua.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-checkpoint.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-citizenlabs.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cleafy.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-clearsky.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cloudsek.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cluster25.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-crowdstrike.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-csirt.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cyberint.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cyble.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-cyfirma.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-d3lab.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-deepinstinct.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-dfir.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-domains.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-domaintools.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-drweb.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-eclecticiq.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-elastic.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-esentire.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-eset.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-fortinet.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-genians.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-googlecloud.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-group-ib.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-guardio.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-hashes.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-hp.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ibm.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ic3.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-infoblox.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ips.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-jpcert.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-kaspersky.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-kroll.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-lookout.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-lumen.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-main.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-malwarebytes.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-malware-traffic.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-mandiant.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-mcafee.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-meta.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-microsoft.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-misc.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-mvt.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-ncc.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-orangecyber.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-orangelog4shell.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-personal.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-positivetech.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-prodraft.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-proofpoint.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-qianxin.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-quointelligence.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-recordedfuture.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-reecdeep.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-sansec.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-securonix.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-sekoia.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-sentinelone.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-seqrite.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-sophos.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-squattingru.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-stats.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-swascan.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-symantec.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-tag.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-talos.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-temp.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-threatfabric.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-trendmicro.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-unit42-playbook.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-unit42-silverterrier.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-unit42.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-uscert.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-various.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-volexity.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-withsecure.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-yarix.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-yoroi.txt,MIT;
-https://raw.githubusercontent.com/scafroglia93/blocklists/master/blocklists-zscaler.txt,MIT;
 https://divested.dev/blocklists/scafroglia93-blocklists-legacy-526b3922.txt,MIT;
+https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/alexa,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/apple,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/huawei,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/roku,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/samsung,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/sonos,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/windows,MIT;
+https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/xiaomi,MIT;
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/ads-and-tracking-extended.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/tracking-aggressive-extended.txt,Apache-2.0;
@@ -168,93 +76,46 @@ https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/phishin
 https://raw.githubusercontent.com/olbat/ut1-blacklists/master/blacklists/stalkerware/domains,CC BY-SA 4.0;
 https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt,CC BY-SA 4.0;
 https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts,CC BY 4.0;
+https://v.firebog.net/hosts/static/w3kbl.txt,CC BY 4.0;
 https://divested.dev/blocklists/Amnesty.txt,CC BY 2.0;
 
 https://blocklistproject.github.io/Lists/alt-version/ads-nl.txt,Unlicense;
 #https://blocklistproject.github.io/Lists/alt-version/crypto-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt,Unlicense;
-#https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt,Unlicense;
+https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/smart-tv-nl.txt,Unlicense;
 https://blocklistproject.github.io/Lists/alt-version/tracking-nl.txt,Unlicense;
 
-https://curben.gitlab.io/malware-filter/urlhaus-filter-hosts.txt,CC0;
-#https://feodotracker.abuse.ch/downloads/ipblocklist.txt,CC0;
-#https://sslbl.abuse.ch/blacklist/sslbl.rpz,CC0;
 https://urlhaus.abuse.ch/downloads/hostfile/,CC0;
 https://threatfox.abuse.ch/downloads/hostfile/,CC0;
-https://v.firebog.net/hosts/Cybercrime.txt,CC0;
 
 https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts,WTFPLv2;
 https://raw.githubusercontent.com/PoorPocketsMcNewHold/SteamScamSites/master/steamscamsite.txt,WTFPLv2;
 
 https://github.com/matomo-org/referrer-spam-blacklist/raw/master/spammers.txt,Public Domain;
+https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt,Public Domain;
 https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook.txt,Public Domain;
 
 https://phishing.army/download/phishing_army_blocklist.txt,CC BY-NC 4.0;
 https://phishing.army/download/phishing_army_blocklist_extended.txt,CC BY-NC 4.0;
-https://v.firebog.net/hosts/static/w3kbl.txt,CC BY-NC 4.0;
 
 https://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;
 #https://raw.githubusercontent.com/KodoPengin/GameIndustry-hosts-Template/master/Main-Template/hosts,CC BY-NC-SA 4.0;
 https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/hostfile.txt,CC BY-NC-SA 4.0;
 
 https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
+https://www.stopforumspam.com/downloads/toxic_domains_whole.txt,CC BY-NC-ND 3.0;
 
-http://malwaredomains.lehigh.edu/files/immortal_domains.txt,AS-IS NC;
 https://joewein.net/dl/bl/dom-bl.txt,AS-IS NC;
 https://joewein.net/dl/bl/dom-bl-base.txt,AS-IS NC;
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
 
-https://raw.githubusercontent.com/cbuijs/shallalist/master/adv/domains,Shalla;
-https://raw.githubusercontent.com/cbuijs/shallalist/master/tracker/domains,Shalla;
-https://raw.githubusercontent.com/cbuijs/shallalist/master/spyware/domains,Shalla;
-
-https://curben.gitlab.io/malware-filter/pup-filter-hosts.txt,Zhouhan Chen;
-
 https://gist.githubusercontent.com/ACK-J/65dfe84fcf5a06c46364e5f2bd29c118/raw/d50dbd66d43f3d21961d182846ba3709d3f88947/ThreatMetrixEndpoints.txt,Unknown;
-https://big.oisd.nl/domainswild2,Unknown;
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 https://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;
-https://raw.githubusercontent.com/astryzia/stalkerware-urls/main/stalkerware_urls.txt,Unknown;
-#https://raw.githubusercontent.com/chiehmin/MinMinGuard/master/app/src/main/assets/host/output_file,Unknown;
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts,Unknown;
-https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/alexa,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/apple,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/huawei,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/roku,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/samsung,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/sonos,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/windows,Unknown;
-https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/xiaomi,Unknown;
-https://raw.githubusercontent.com/nextdns/metadata/master/security/parked-domains-cname,Unknown;
-https://v.firebog.net/hosts/APT1Rep.txt,Unknown;
-https://www.stopforumspam.com/downloads/toxic_domains_whole.txt,Unknown;
-http://sysctl.org/cameleon/hosts,Unknown;
+https://sysctl.org/cameleon/hosts,Unknown;
 https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt,Unknown;
-
-#Dead
-https://hosts-file.net/ad_servers.txt,hpHosts;
-https://hosts-file.net/emd.txt,hpHosts;
-https://hosts-file.net/exp.txt,hpHosts;
-https://hosts-file.net/fsa.txt,hpHosts;
-https://hosts-file.net/grm.txt,hpHosts;
-https://hosts-file.net/hfs.txt,hpHosts;
-https://hosts-file.net/hjk.txt,hpHosts;
-https://hosts-file.net/mmt.txt,hpHosts;
-https://hosts-file.net/pha.txt,hpHosts;
-https://hosts-file.net/psh.txt,hpHosts;
-https://hosts-file.net/wrz.txt,hpHosts;
-https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/cryptomine.txt,Unknown;
-https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/gamefake.txt,Unknown;
-https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/jbfake.txt,Unknown;
-https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/mobile.txt,Unknown;
-#https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/other.txt,Unknown;
-https://raw.githubusercontent.com/Akamaru/Pi-Hole-Lists/master/smarttv.txt,Unknown;
-
-#https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.plus.txt,Unknown;
-#https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/ultimate.txt,Unknown;
-#https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt,Unknown;

@@ -30,9 +30,9 @@ https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardCNAME.txt,GPL
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt,GPLv3;
 https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileSpyware.txt,GPLv3;
 https://big.oisd.nl/domainswild2,GPLv3;
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.plus.txt,GPLv3;
-#https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/ultimate.txt,GPLv3;
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt,GPLv3;
+https://github.com/hagezi/dns-blocklists/raw/refs/heads/main/adblock/pro.plus.txt,GPLv3;
+#https://github.com/hagezi/dns-blocklists/raw/refs/heads/main/adblock/ultimate.txt,GPLv3;
+https://github.com/hagezi/dns-blocklists/raw/refs/heads/main/adblock/tif.txt,GPLv3;
 
 https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_ads.txt,MIT;
 https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/data/combined_disguised_trackers.txt,MIT;
@@ -60,6 +60,7 @@ https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/s
 https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/sonos,MIT;
 https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/windows,MIT;
 https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/xiaomi,MIT;
+https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts,MIT;
 
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/ads-and-tracking-extended.txt,Apache-2.0;
 https://raw.githubusercontent.com/lightswitch05/hosts/master/docs/lists/tracking-aggressive-extended.txt,Apache-2.0;
@@ -103,19 +104,17 @@ https://phishing.army/download/phishing_army_blocklist.txt,CC BY-NC 4.0;
 https://phishing.army/download/phishing_army_blocklist_extended.txt,CC BY-NC 4.0;
 
 https://www.winhelp2002.mvps.org/hosts.txt,CC BY-NC-SA 4.0;
-#https://raw.githubusercontent.com/KodoPengin/GameIndustry-hosts-Template/master/Main-Template/hosts,CC BY-NC-SA 4.0;
 https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/hostfile.txt,CC BY-NC-SA 4.0;
 
-https://raw.githubusercontent.com/vokins/yhosts/master/hosts.txt,CC BY-NC-ND 4.0;
 https://www.stopforumspam.com/downloads/toxic_domains_whole.txt,CC BY-NC-ND 3.0;
 
 https://joewein.net/dl/bl/dom-bl.txt,AS-IS NC;
 https://joewein.net/dl/bl/dom-bl-base.txt,AS-IS NC;
 https://someonewhocares.org/hosts/hosts,AS-IS NC;
 
-https://gist.githubusercontent.com/ACK-J/65dfe84fcf5a06c46364e5f2bd29c118/raw/d50dbd66d43f3d21961d182846ba3709d3f88947/ThreatMetrixEndpoints.txt,Unknown;
+https://gist.githubusercontent.com/ACK-J/65dfe84fcf5a06c46364e5f2bd29c118/raw,Unknown;
 https://pgl.yoyo.org/adservers/admiral-domains.txt,Unknown;
 https://pgl.yoyo.org/as/serverlist.php?hostformat=html&mimetype=plaintext,Unknown;
-https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts,Unknown;
 https://sysctl.org/cameleon/hosts,Unknown;
 https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt,Unknown;
+https://gist.githubusercontent.com/cdup07/9f563dfb78a06fad5db794f33ba93a3f/raw,Unknown;

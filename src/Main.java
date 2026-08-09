@@ -356,6 +356,10 @@ public class Main {
             return domains;
         }
 
+        if (line.startsWith("||") && line.endsWith("^") && !line.contains(" ")) {
+            domains.addAll(getDomainsFromString(line.substring(2, line.length() - 1)));
+        }
+
         String[] blankSplit = line
                 .replaceAll("[\\s,;]", "~")
                 .split("~");

@@ -337,11 +337,13 @@ public class Main {
             if (identifyFileType(in.toString()).equals(".gz")) {//Decompress GunZip
                 fileIn = new Scanner(new GZIPInputStream(new FileInputStream(in)));
             }
-            while (fileIn.hasNext()) {
-                out.addAll(getDomainsFromString(fileIn.nextLine()));
-                RAW_COUNT++;
+            if (fileIn != null) {
+                while (fileIn.hasNext()) {
+                    out.addAll(getDomainsFromString(fileIn.nextLine()));
+                    RAW_COUNT++;
+                }
+                System.out.println("\tAdded " + out.size() + " entries");
             }
-            System.out.println("\tAdded " + out.size() + " entries");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -366,7 +368,7 @@ public class Main {
 
         Matcher matcher;
         for (String aSpaceSplit : blankSplit) {
-            if (shouldConsiderString(line)) {
+            if (shouldConsiderString(aSpaceSplit)) {
                 aSpaceSplit = aSpaceSplit
                         .replaceAll("https://", "")
                         .replaceAll("http://", "")
